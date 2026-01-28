@@ -551,7 +551,6 @@ const App = () => {
                       fontSize: '14px',
                       color: '#bc8f8f',
                       textDecoration: 'none',
-                      borderBottom: '1px solid #bc8f8f',
                       paddingBottom: '2px',
                       background: 'none',
                       border: 'none',
@@ -1137,7 +1136,7 @@ const App = () => {
             <a href="https://linkedin.com/in/julianna-roberts-1118m/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
               LinkedIn
             </a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <a href="https://github.com/jannar18" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
               GitHub
             </a>
             <a href="mailto:juliannaroberts18@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
