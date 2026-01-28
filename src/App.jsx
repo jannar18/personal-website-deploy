@@ -440,7 +440,7 @@ const App = () => {
                       One year ago I was finishing a 5 year accredited architecture program at Illinois Tech. I was on track to follow the traditional path towards becoming a Licensed Architect through NCARB, but as I was nearing graduation I looked at the rapidly changing world around me, I looked at my field which seemed stuck in time... and I realized I wanted to respond to it. Now I'm taking the time to look into the future and predict the skills I will need to be successful in the future version of my field.
                     </p>
                     <p style={{ marginBottom: '20px' }}>
-                      I will be developing valuable skills like: AI, writing, researching, and marketing and publishing artifacts here to prepare for a future of entrepreneurship that implements both AI and my design practice.
+                      I will be developing valuable skills like: AI, writing, researching, and marketing and publishing those artifacts here to prepare for a future of entrepreneurship that implements both AI and my design practice.
                     </p>
                     <p style={{ 
                       marginBottom: '20px',
@@ -450,7 +450,7 @@ const App = () => {
                       fontSize: '16px',
                       color: '#8b7355'
                     }}>
-                      "When you build a thing you cannot merely build that thing in isolation, but must repair the world around it, and within it, so that the larger world at that one place becomes more coherent, and more whole." — Christopher Alexander
+                      "When you build a thing you cannot merely build that thing in isolation, but must repair the world around it, and within it, so that the larger world at that one place becomes more coherent, and more whole." — Christopher Alexander, The Timeless Way of Building
                     </p>
                   </div>
                 </div>
@@ -545,18 +545,23 @@ const App = () => {
                   }}>
                     Resume
                   </h3>
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => window.print()}
                     style={{
                       fontSize: '14px',
                       color: '#bc8f8f',
                       textDecoration: 'none',
                       borderBottom: '1px solid #bc8f8f',
-                      paddingBottom: '2px'
+                      paddingBottom: '2px',
+                      background: 'none',
+                      border: 'none',
+                      borderBottom: '1px solid #bc8f8f',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit'
                     }}
                   >
                     Download PDF →
-                  </a>
+                  </button>
                 </div>
 
                 {/* Experience */}
