@@ -2,6 +2,212 @@ import React, { useState } from 'react';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [activeBlogPost, setActiveBlogPost] = useState(null);
+
+
+  // Blog post data
+  const blogPosts = [
+    {
+      id: 1,
+      date: 'January 28, 2025',
+      title: 'Blog Post #1: How I Learned Claude In One Day To Make This Blog',
+      excerpt: "Yesterday I arrived in my new Brooklyn apartment at 11:00pm at night. This morning at 10:30am I met for coffee to discuss the game plan for how I'm going to gain skills in AI, writing and branding over the next 90 days under a graduate program level of intensity and structure. By 11:00am I was at the office, installing Claude Desktop.",
+      tags: ['AI'],
+      content: `Yesterday I arrived in my new Brooklyn apartment at 11:00pm at night. This morning at 10:30am I met for coffee to discuss the game plan for how I'm going to gain skills in AI, writing and branding over the next 90 days under a graduate program level of intensity and structure. By 11:00am I was at the office, installing Claude Desktop.
+
+My goal: To create a personal website I'm proud of, deploy it, and write a blog post about the experience within the workday by only interacting with Claude interfaces and no other applications.
+
+The tasks and advice I was given were to:
+LISTITEM:Set-up Claude - both the desktop and Claude Code
+SUBITEM:To run Claude Code in the "Ghostty" terminal which I later learned was actually the Ghostty terminal
+LISTITEM:Learn about Claude skills using Claude
+SUBITEM:What are its valuable skills?
+SUBITEM:How does Claude learn these skills?
+SUBITEM:What are Claude's most valuable skills?
+SUBITEM:What skills will I need to make my blog?
+LISTITEM:Spend some time doing Metacognitive Thinking
+LISTITEM:Evaluate if Claude is BS'ing me
+LISTITEM:Evaluate if Claude is gassing me up
+LISTITEM:Design the personal website with Claude
+LISTITEM:Deploy the Blog
+SUBITEM:Come up with a deployment plan
+SUBITEM:Be able to explain the steps of deployment
+LISTITEM:Publish this Blog
+
+I am an architectural designer.
+
+So I began:
+
+TIMESTAMP:10:30
+LISTITEM:Looked up Claude on Google and downloaded
+LISTITEM:Used Claude in browser to look up how to install Claude Code and use the Ghostty terminal
+LISTITEM:Learned I need Homebrew
+LISTITEM:Asked Claude how to check if Homebrew is installed
+LISTITEM:It was not installed
+LISTITEM:Began to install Homebrew with the code Claude provided
+
+TIMESTAMP:11:40
+LISTITEM:Became confused about password request… a bit embarrassing
+LISTITEM:Claude confirmed I won't see the password but to just type my macOS user password
+LISTITEM:While waiting for the Homebrew install I attempted to Connect Claude Desktop to my google account and did some wifi troubleshooting
+
+TIMESTAMP:11:50
+LISTITEM:I spent some time asking Claude about Claude Code versus Desktop and if I could work on setting anything else up for my blog while I waited for Homebrew to install
+LISTITEM:I asked Claude about what its skills are and learned that some of them are: docx, pptx, xlsx, pdf, front-end-design, product-self-knowledge, and skill-creator
+LISTITEM:I asked Claude how it learns and understands these and learned it retrieves files, reads them to remind itself/ensure it is referencing the most updated practices
+LISTITEM:I asked Claude its most valuable skills. In response it just excitedly retold me its skills again…? But it seemed to think its ability to analyze and create documents was the most important along with front-end-design because it is capable of creating polished react based websites
+LISTITEM:I determined that I should ask code to focus on the front-end-design skill
+LISTITEM:It was perfect timing because I thought I could finally use Claude Code! It turns out I couldn't yet because my macOS software was out of date… RIP
+
+TIMESTAMP:12:22
+LISTITEM:I wanted to keep moving so it was here that decided to make this website using Claude Desktop
+LISTITEM:"I'd like to build a polished personal website for publishing blogs and artifacts using your front-end design skill"
+LISTITEM:I confirmed with Claude that I could do this and we began
+LISTITEM:Claude asked me the following:
+NUMBERED:1. Your field/focus area
+NUMBERED:2. The aesthetic vibe you're going for
+NUMBERED:3. Whether you want single-page HTML or React
+NUMBERED:4. What content you want featured (blog list, projects, about section, etc.)
+LISTITEM:Response:
+NUMBERED:1. I am a recent architecture graduate from Illinois Tech. I completed a 5 year B.Arch program and I'm now going through a custom graduate program in which I will be rapidly growing my AI, writing, and marketing/branding skills.
+NUMBERED:2. I like feminine and japanese aesthetics, a mix of both modern + retro aesthetic would be good. I like desert colors, muted colors, feminine colors, earth tones etc. I want it to seem professional but not so polished and complete that it is missing the quality of active working and research.
+NUMBERED:3. I would like to use React elements.
+NUMBERED:4. I would like some sort of about me, a blog list, and a project section for artifacts
+LISTITEM:I didn't think too hard about these responses at all
+
+TIMESTAMP:12:35
+LISTITEM:I had a website that was beautiful and I could deploy
+LISTITEM:I asked for a home page
+LISTITEM:Asked for edits on the header of the home page
+LISTITEM:And got called into a meeting
+
+TIMESTAMP:1:32
+LISTITEM:I came back excited to know my software would be updated and I could use Claude Code.
+LISTITEM:I asked Claude what the best method for editing the infill text is. One of its suggestions was using Claude Code and I really thought I had it installed at this point.
+LISTITEM:It was here I started asking Claude about the ghostie terminal
+DIALOGUE:"Ah! I don't actually know what "ghostie terminal" refers to - I assumed you were using a nickname for your terminal app, but now I'm realizing you might be referring to something specific that I'm not familiar with."
+LISTITEM:I felt a bit dumb…
+LISTITEM:So I moved on and simplified: "How do I run Claude code?"
+LISTITEM:I spent a long long time asking Claude how to run Claude Code and it kept telling me to type claude or claude-code in many several different ways. This seemed odd to me. Shouldn't the command be simple? Claude was so convinced that I might have actually installed Claude Code already or that I should figure out how to run it with my out of date macOS software that it had me check to see if the terminal recognized Claude Code as an app? I apologize if this is getting confusing, this is where it got confusing for me, and I definitely could have hyper-analyzed it but instead I kept showing Claude the terminal responses and let it take me on this cyclical journey of continuing to prompt my terminal to open Claude Code and getting 'command not found' in response to every single one.
+
+TIMESTAMP:1:47
+LISTITEM:"None of these are working"
+LISTITEM:I don't understand how…but my software update stopped sometime during the meeting and I had to restart it. RIP!
+LISTITEM:Dealing with this was a ridiculous time sink
+LISTITEM:I started the update again and continued to edit the website with Claude Desktop
+
+TIMESTAMP:1:50
+LISTITEM:I asked Claude to be analytical about the site and think about anything we were missing that typically goes into a personal website
+LISTITEM:From this conversation I asked Claude to use its pdf skill, uploaded my resume and had it implement the resume as both a separate section on the site and on the about page to see which worked better on the site
+LISTITEM:From here I was in a good flow state asking for small detailed edits on the text and then editing all of the infill text to pertain to my actual information
+LISTITEM:It was awesome that Claude could show me the updates visually in real time
+LISTITEM:I was having a lot of fun
+
+TIMESTAMP:2:30
+LISTITEM:I mentioned to Claude that I was ready to write my blog post and asked it to clear all of the made up blog post containers
+LISTITEM:After this update it assumed we were done editing and gave me a .jsx file to download
+LISTITEM:Oddly enough it stopped displaying the visuals I had been seeing, I didn't know what those containers looked like anymore
+LISTITEM:Claude tried to tell me that it couldn't pull up the visuals anymore… why would it do this? It just didn't want to run the artifact again, but it kept telling me "I can't"…which was interesting
+LISTITEM:I was ready to write so I decided to take a lunch break
+
+TIMESTAMP:3:30
+LISTITEM:I uploaded a profile picture to implement and ran into an issue where Claude couldn't convert the HEIC to JPEG
+LISTITEM:It also didn't have authorized access to my local files so it couldn't run the profile picture in the artifact visual
+LISTITEM:More edits, writing the about page etc.
+
+TIMESTAMP:4:17
+LISTITEM:I decided to deploy the site
+LISTITEM:Turns out Claude Code was still not installed and was still not installing with the commands Claude was providing me
+LISTITEM:I thought back to the advice given to me and remembered the ghostie terminal! I decided to cheat and look this up on google because Claude seemed to have no clue what I was talking about…
+LISTITEM:This is where I finally learned after hours that I had been making a huge dumb mistake!! Ghostty, it is called the Ghostty terminal
+
+Me: "I think part of the issue is that i dont have the ghostty terminal"
+Claude: "Ah! You're right - Claude Code requires the Ghostty terminal. Let's install Ghostty first:"
+
+Installation Successful!
+
+I typed claudecode into the Ghostty terminal as suggested by Claude…
+
+command not found
+
+RIP… truly rip.
+
+I had just told Liam I was having so much fun… sigh
+
+I'm going to be honest after this I went back into the same cycle with Claude, this time I copied all the responses from terminal and fed them to Claude Desktop who I had been working with all day. After a whirlwind journey….we had finally located the path to Claude Code. I knew this because a cute little pixel creature showed up on my screen. I smiled.
+
+Me: "okay that was a bit confusing for me but claude code now opens with the claude command"
+
+Claude: "Perfect! That's all that matters - you got it working! 🎉
+Now you can just type claude in your terminal and Claude Code will open."
+
+Relief.
+
+TIMESTAMP:4:40
+
+Goal: Deploy the Site
+LISTITEM:Claude asked me if I had used any deployment platforms before
+SUBITEM:I had: Github and Netlify
+LISTITEM:Claude told me a plan and asked if it should begin preparing for deployment
+LISTITEM:I said yes and told it to explain the deployment steps:
+
+CODEBLOCK:personal-website-deploy/
+├── package.json (dependencies & scripts)
+├── .gitignore (files to ignore in git)
+├── README.md (documentation)
+├── public/
+│   ├── index.html (main HTML file)
+│   └── profile-pic.jpg (your photo)
+└── src/
+    ├── index.js (entry point)
+    └── App.jsx (your website component)
+
+Claude told me the next steps were to:
+NUMBERED:1. download the file and extract
+NUMBERED:2. Open the terminal and navigate to the folder (cd personal-website-deploy)
+NUMBERED:3. Install dependencies (npm install)
+NUMBERED:4. Test it locally (npm start)
+
+Me: "I still need to finish reading but what is npm?"
+
+TIMESTAMP:4:56
+LISTITEM:I followed all of the above deployment steps but when I ran it locally in my browser a scary red ERROR paragraph appeared :(
+LISTITEM:Claude had forgotten to close the <main> tags
+LISTITEM:A couple of different errors showed up and I continued to replace the App.jsx file
+
+TIMESTAMP:5:05
+LISTITEM:I remember I needed to change the really odd quote Claude had put onto my about page
+LISTITEM:I chose one from Christopher Alexander's book "The Timeless Way of Building"
+
+TIMESTAMP:5:17
+LISTITEM:My personal website was successfully running locally
+LISTITEM:The last steps were to push to GitHub
+LISTITEM:Claude Code told me that to use GitHub I needed to install Xcode command line tools… the install was going to take forever… not this again
+LISTITEM:Turns out the easiest thing for me to do here would have been to use the manual skills I had and push it myself using GitHub Desktop and Netlify
+LISTITEM:I started documenting my experience today while I was waiting but eventually decided to use GitHub Desktop myself
+LISTITEM:I successfully published to GitHub and asked Claude if it had any ability to publish to Netlify for me - it said it didn't have that ability
+
+TIMESTAMP:6:10
+LISTITEM:I published to Netlify
+LISTITEM:ERROR
+LISTITEM:Claude had put an invalid href
+LISTITEM:Updated the App.jsx
+LISTITEM:ERROR
+
+TIMESTAMP:6:15
+LISTITEM:I was reminded around this time to check the model of Claude I was using. My Claude Code was set to Opus 4.5 - good. Claude Desktop however was set to Sonnet 4.5 instead of Opus 4.5 :'(
+LISTITEM:I showed the errors to Claude in Opus 4.5
+LISTITEM:It wanted to find my files by connecting to google? This was annoying and didn't work…
+LISTITEM:I instead gave it the file path to my project
+LISTITEM:I attempted to see if Claude Code could commit changes to the main branch and push to origin
+LISTITEM:It did commit the changes - very cool!
+LISTITEM:But it said I needed to install GitHub CLI in order for the push to origin to work
+LISTITEM:I clicked push to origin myself
+LISTITEM:Opened my browser and there was my website, successfully published on the World Wide Web with Netlify!
+
+Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
+    }
+  ];
 
   return (
     <div style={{
@@ -230,6 +436,10 @@ const App = () => {
                 </div>
                 
                 <article
+                  onClick={() => {
+                    setActiveSection('writing');
+                    setActiveBlogPost(blogPosts[0]);
+                  }}
                   style={{
                     padding: '40px',
                     background: 'rgba(255,255,255,0.6)',
@@ -254,7 +464,7 @@ const App = () => {
                     marginBottom: '16px',
                     letterSpacing: '1px'
                   }}>
-                    Date
+                    {blogPosts[0].date}
                   </div>
                   
                   <h4 style={{
@@ -265,7 +475,7 @@ const App = () => {
                     fontFamily: '"Cormorant Garamond", serif',
                     lineHeight: '1.3'
                   }}>
-                    Title
+                    {blogPosts[0].title}
                   </h4>
                   
                   <p style={{
@@ -274,7 +484,7 @@ const App = () => {
                     color: '#5a4a3a',
                     marginBottom: '20px'
                   }}>
-                    Excerpt
+                    {blogPosts[0].excerpt.substring(0, 200)}...
                   </p>
                   
                   <div style={{
@@ -282,18 +492,21 @@ const App = () => {
                     gap: '12px',
                     flexWrap: 'wrap'
                   }}>
-                    <span
-                      style={{
-                        fontSize: '12px',
-                        padding: '4px 12px',
-                        background: 'rgba(205,180,155,0.2)',
-                        color: '#8b7355',
-                        borderRadius: '2px',
-                        letterSpacing: '0.5px'
-                      }}
-                    >
-                      Tag
-                    </span>
+                    {blogPosts[0].tags.map(tag => (
+                      <span
+                        key={tag}
+                        style={{
+                          fontSize: '12px',
+                          padding: '4px 12px',
+                          background: 'rgba(205,180,155,0.2)',
+                          color: '#8b7355',
+                          borderRadius: '2px',
+                          letterSpacing: '0.5px'
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
                   {/* Corner accent */}
@@ -916,7 +1129,7 @@ const App = () => {
           )}
 
           {/* Writing/Blog section */}
-          {activeSection === 'writing' && (
+          {activeSection === 'writing' && !activeBlogPost && (
             <section style={{
               animation: 'fadeIn 0.6s ease'
             }}>
@@ -935,59 +1148,153 @@ const App = () => {
                 flexDirection: 'column',
                 gap: '32px'
               }}>
-                <article
-                  style={{
-                    padding: '32px',
-                    background: 'rgba(255,255,255,0.5)',
-                    border: '1px solid rgba(205,180,155,0.25)',
-                    borderRadius: '2px',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateX(8px)';
-                    e.currentTarget.style.borderColor = 'rgba(188,143,143,0.5)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateX(0)';
-                    e.currentTarget.style.borderColor = 'rgba(205,180,155,0.25)';
-                  }}
-                >
-                  <div style={{
-                    fontSize: '12px',
-                    color: '#bc8f8f',
-                    marginBottom: '12px',
-                    letterSpacing: '1px'
-                  }}>
-                    Date
-                  </div>
-                  
-                  <h3 style={{
-                    fontSize: '24px',
-                    fontWeight: '400',
-                    marginBottom: '16px',
-                    color: '#3d3028',
-                    fontFamily: '"Cormorant Garamond", serif'
-                  }}>
-                    Title
-                  </h3>
-                  
-                  <p style={{
-                    fontSize: '16px',
-                    lineHeight: '1.7',
-                    color: '#5a4a3a',
-                    marginBottom: '16px'
-                  }}>
-                    Excerpt
-                  </p>
-                  
-                  <div style={{
-                    display: 'flex',
-                    gap: '12px',
-                    flexWrap: 'wrap'
-                  }}>
+                {blogPosts.map(post => (
+                  <article
+                    key={post.id}
+                    onClick={() => setActiveBlogPost(post)}
+                    style={{
+                      padding: '32px',
+                      background: 'rgba(255,255,255,0.5)',
+                      border: '1px solid rgba(205,180,155,0.25)',
+                      borderRadius: '2px',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer',
+                      position: 'relative'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(8px)';
+                      e.currentTarget.style.borderColor = 'rgba(188,143,143,0.5)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                      e.currentTarget.style.borderColor = 'rgba(205,180,155,0.25)';
+                    }}
+                  >
+                    <div style={{
+                      fontSize: '12px',
+                      color: '#bc8f8f',
+                      marginBottom: '12px',
+                      letterSpacing: '1px'
+                    }}>
+                      {post.date}
+                    </div>
+                    
+                    <h3 style={{
+                      fontSize: '24px',
+                      fontWeight: '400',
+                      marginBottom: '16px',
+                      color: '#3d3028',
+                      fontFamily: '"Cormorant Garamond", serif'
+                    }}>
+                      {post.title}
+                    </h3>
+                    
+                    <p style={{
+                      fontSize: '16px',
+                      lineHeight: '1.7',
+                      color: '#5a4a3a',
+                      marginBottom: '16px'
+                    }}>
+                      {post.excerpt.substring(0, 200)}...
+                    </p>
+                    
+                    <div style={{
+                      display: 'flex',
+                      gap: '12px',
+                      flexWrap: 'wrap'
+                    }}>
+                      {post.tags.map(tag => (
+                        <span
+                          key={tag}
+                          style={{
+                            fontSize: '12px',
+                            padding: '4px 12px',
+                            background: 'rgba(205,180,155,0.2)',
+                            color: '#8b7355',
+                            borderRadius: '2px',
+                            letterSpacing: '0.5px'
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Sketch-like corner accent */}
+                    <div style={{
+                      position: 'absolute',
+                      top: '0',
+                      right: '0',
+                      width: '40px',
+                      height: '40px',
+                      borderTop: '2px solid rgba(188,143,143,0.3)',
+                      borderRight: '2px solid rgba(188,143,143,0.3)',
+                      opacity: 0.5
+                    }} />
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Individual Blog Post View */}
+          {activeBlogPost && (
+            <section style={{
+              animation: 'fadeIn 0.6s ease'
+            }}>
+              <button
+                onClick={() => setActiveBlogPost(null)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#bc8f8f',
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  marginBottom: '40px',
+                  padding: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                ← Back to Writing
+              </button>
+              
+              <article style={{
+                maxWidth: '700px'
+              }}>
+                <div style={{
+                  fontSize: '12px',
+                  color: '#bc8f8f',
+                  marginBottom: '16px',
+                  letterSpacing: '1px'
+                }}>
+                  {activeBlogPost.date}
+                </div>
+                
+                <h1 style={{
+                  fontSize: '36px',
+                  fontWeight: '400',
+                  marginBottom: '24px',
+                  color: '#3d3028',
+                  fontFamily: '"Cormorant Garamond", serif',
+                  lineHeight: '1.3'
+                }}>
+                  {activeBlogPost.title}
+                </h1>
+                
+                <div style={{
+                  display: 'flex',
+                  gap: '12px',
+                  flexWrap: 'wrap',
+                  marginBottom: '40px',
+                  paddingBottom: '40px',
+                  borderBottom: '1px solid rgba(205,180,155,0.3)'
+                }}>
+                  {activeBlogPost.tags.map(tag => (
                     <span
+                      key={tag}
                       style={{
                         fontSize: '12px',
                         padding: '4px 12px',
@@ -997,23 +1304,180 @@ const App = () => {
                         letterSpacing: '0.5px'
                       }}
                     >
-                      Tag
+                      {tag}
                     </span>
-                  </div>
-                  
-                  {/* Sketch-like corner accent */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '0',
-                    right: '0',
-                    width: '40px',
-                    height: '40px',
-                    borderTop: '2px solid rgba(188,143,143,0.3)',
-                    borderRight: '2px solid rgba(188,143,143,0.3)',
-                    opacity: 0.5
-                  }} />
-                </article>
-              </div>
+                  ))}
+                </div>
+                
+                <div style={{
+                  fontSize: '17px',
+                  lineHeight: '1.9',
+                  color: '#3d3028'
+                }}>
+                  {(() => {
+                    const content = activeBlogPost.content;
+                    const lines = content.split('\n');
+                    const elements = [];
+                    let i = 0;
+                    
+                    while (i < lines.length) {
+                      const line = lines[i];
+                      
+                      // Skip empty lines
+                      if (line.trim() === '') {
+                        i++;
+                        continue;
+                      }
+                      
+                      // Handle TIMESTAMP
+                      if (line.startsWith('TIMESTAMP:')) {
+                        const time = line.replace('TIMESTAMP:', '');
+                        elements.push(
+                          <p key={i} style={{
+                            marginBottom: '16px',
+                            marginTop: '48px',
+                            fontWeight: '600',
+                            color: '#8b7355',
+                            fontSize: '18px',
+                            letterSpacing: '0.5px',
+                            borderBottom: '1px solid rgba(205,180,155,0.3)',
+                            paddingBottom: '8px'
+                          }}>
+                            {time}
+                          </p>
+                        );
+                        i++;
+                        continue;
+                      }
+                      
+                      // Handle LISTITEM and collect consecutive list items
+                      if (line.startsWith('LISTITEM:') || line.startsWith('SUBITEM:')) {
+                        const listItems = [];
+                        while (i < lines.length && (lines[i].startsWith('LISTITEM:') || lines[i].startsWith('SUBITEM:') || lines[i].startsWith('NUMBERED:'))) {
+                          const currentLine = lines[i];
+                          if (currentLine.startsWith('LISTITEM:')) {
+                            listItems.push({ type: 'main', text: currentLine.replace('LISTITEM:', '') });
+                          } else if (currentLine.startsWith('SUBITEM:')) {
+                            listItems.push({ type: 'sub', text: currentLine.replace('SUBITEM:', '') });
+                          } else if (currentLine.startsWith('NUMBERED:')) {
+                            listItems.push({ type: 'numbered', text: currentLine.replace('NUMBERED:', '') });
+                          }
+                          i++;
+                        }
+                        elements.push(
+                          <div key={`list-${i}`} style={{ marginBottom: '24px' }}>
+                            {listItems.map((item, idx) => (
+                              <div key={idx} style={{
+                                marginBottom: '8px',
+                                paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                display: 'flex',
+                                gap: '12px',
+                                alignItems: 'flex-start'
+                              }}>
+                                {item.type !== 'numbered' && (
+                                  <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                )}
+                                <span>{item.text}</span>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                        continue;
+                      }
+                      
+                      // Handle DIALOGUE
+                      if (line.startsWith('DIALOGUE:')) {
+                        const text = line.replace('DIALOGUE:', '');
+                        elements.push(
+                          <p key={i} style={{
+                            marginBottom: '16px',
+                            fontStyle: 'italic',
+                            paddingLeft: '20px',
+                            borderLeft: '2px solid rgba(188,143,143,0.4)',
+                            color: '#5a4a3a'
+                          }}>
+                            {text}
+                          </p>
+                        );
+                        i++;
+                        continue;
+                      }
+                      
+                      // Handle CODEBLOCK
+                      if (line.startsWith('CODEBLOCK:')) {
+                        const codeLines = [line.replace('CODEBLOCK:', '')];
+                        i++;
+                        while (i < lines.length && (lines[i].startsWith('├') || lines[i].startsWith('│') || lines[i].startsWith('└') || lines[i].trim() === '')) {
+                          if (lines[i].trim() !== '') {
+                            codeLines.push(lines[i]);
+                          }
+                          i++;
+                        }
+                        elements.push(
+                          <pre key={`code-${i}`} style={{
+                            marginBottom: '24px',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            background: 'rgba(205,180,155,0.15)',
+                            padding: '16px',
+                            borderRadius: '4px',
+                            whiteSpace: 'pre',
+                            lineHeight: '1.6',
+                            overflowX: 'auto'
+                          }}>
+                            {codeLines.join('\n')}
+                          </pre>
+                        );
+                        continue;
+                      }
+                      
+                      // Handle Me: and Claude: dialogue
+                      if (line.startsWith('Me:') || line.startsWith('Claude:')) {
+                        elements.push(
+                          <p key={i} style={{
+                            marginBottom: '16px',
+                            fontStyle: 'italic',
+                            paddingLeft: '20px',
+                            borderLeft: '2px solid rgba(188,143,143,0.4)',
+                            color: '#5a4a3a'
+                          }}>
+                            {line}
+                          </p>
+                        );
+                        i++;
+                        continue;
+                      }
+                      
+                      // Handle Goal: lines
+                      if (line.startsWith('Goal:')) {
+                        elements.push(
+                          <p key={i} style={{
+                            marginBottom: '16px',
+                            fontWeight: '600',
+                            color: '#3d3028'
+                          }}>
+                            {line}
+                          </p>
+                        );
+                        i++;
+                        continue;
+                      }
+                      
+                      // Regular paragraph
+                      elements.push(
+                        <p key={i} style={{
+                          marginBottom: '24px'
+                        }}>
+                          {line}
+                        </p>
+                      );
+                      i++;
+                    }
+                    
+                    return elements;
+                  })()}
+                </div>
+              </article>
             </section>
           )}
 
