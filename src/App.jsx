@@ -216,7 +216,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
       fontFamily: '"Crimson Pro", "Noto Serif JP", serif',
       color: '#3d3028',
       position: 'relative',
-      overflow: 'hidden'
+      overflowX: 'hidden'
     }}>
       {/* Subtle texture overlay */}
       <div style={{
@@ -256,7 +256,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
       }} />
 
       {/* Main container */}
-      <div style={{
+      <div className="main-container" style={{
         maxWidth: '1100px',
         margin: '0 auto',
         padding: '60px 40px',
@@ -270,7 +270,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
           paddingBottom: '40px',
           position: 'relative'
         }}>
-          <div style={{
+          <div className="header-flex" style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'baseline',
@@ -278,7 +278,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
             gap: '20px'
           }}>
             <div>
-              <h1 style={{
+              <h1 className="site-title" style={{
                 fontSize: '48px',
                 fontWeight: '300',
                 margin: '0 0 8px 0',
@@ -299,7 +299,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
             </div>
             
             {/* Navigation */}
-            <nav style={{
+            <nav className="nav-links" style={{
               display: 'flex',
               gap: '32px',
               fontSize: '14px',
@@ -627,7 +627,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
             <section style={{
               animation: 'fadeIn 0.6s ease'
             }}>
-              <div style={{
+              <div className="about-grid" style={{
                 display: 'grid',
                 gridTemplateColumns: '2fr 1fr',
                 gap: '60px',
@@ -668,7 +668,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                   </div>
                 </div>
                 
-                <div style={{
+                <div className="about-sidebar" style={{
                   background: 'rgba(255,255,255,0.4)',
                   padding: '32px',
                   borderRadius: '2px',
@@ -683,6 +683,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     <img 
                       src="/profile-pic.jpg" 
                       alt="Julianna Roberts"
+                      className="profile-image"
                       style={{
                         width: '180px',
                         height: '180px',
@@ -743,7 +744,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                 paddingTop: '60px',
                 borderTop: '1px solid rgba(205,180,155,0.3)'
               }}>
-                <div style={{
+                <div className="resume-header" style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'baseline',
@@ -790,7 +791,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                   </h4>
 
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{
+                    <div className="experience-row" style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       marginBottom: '8px',
@@ -832,7 +833,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                   </div>
 
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{
+                    <div className="experience-row" style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       marginBottom: '8px',
@@ -874,7 +875,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                   </div>
 
                   <div>
-                    <div style={{
+                    <div className="experience-row" style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       marginBottom: '8px',
@@ -1578,7 +1579,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
         </main>
 
         {/* Footer */}
-        <footer style={{
+        <footer className="footer-container" style={{
           marginTop: '120px',
           paddingTop: '40px',
           borderTop: '1px solid rgba(61,48,40,0.15)',
@@ -1638,6 +1639,91 @@ Now I just need to have Claude check this for errors, and add in an actual page 
         
         a:hover {
           color: #bc8f8f !important;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+          
+          .about-sidebar {
+            order: -1;
+          }
+          
+          .main-container {
+            padding: 32px 20px !important;
+          }
+          
+          .header-flex {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 24px !important;
+          }
+          
+          .nav-links {
+            gap: 20px !important;
+            flex-wrap: wrap;
+          }
+          
+          .site-title {
+            font-size: 36px !important;
+          }
+          
+          .section-title {
+            font-size: 28px !important;
+          }
+          
+          .resume-header {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          
+          .experience-row {
+            flex-direction: column !important;
+            gap: 4px !important;
+          }
+          
+          .footer-container {
+            flex-direction: column !important;
+            text-align: center;
+            gap: 16px !important;
+          }
+          
+          .profile-image {
+            width: 140px !important;
+            height: 140px !important;
+          }
+          
+          p, span, li, div {
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .main-container {
+            padding: 24px 16px !important;
+          }
+          
+          .site-title {
+            font-size: 32px !important;
+          }
+          
+          .nav-links {
+            gap: 16px !important;
+            font-size: 13px !important;
+          }
+          
+          .blog-card {
+            padding: 24px !important;
+          }
+          
+          .profile-image {
+            width: 120px !important;
+            height: 120px !important;
+          }
         }
       `}</style>
     </div>
