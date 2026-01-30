@@ -210,7 +210,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
     {
       id: 2,
       date: 'January 30, 2025',
-      title: 'Blog #2: I\'ve Been Convinced by Crusonia Plants - Stubborn Attachments by Tyler Cowen',
+      title: 'Blog #2: I\'ve Been Convinced of Crusonia Plants - Stubborn Attachments by Tyler Cowen',
       excerpt: 'A few things: I have never published my thoughts on a book. I haven\'t read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.',
       tags: ['Book Review', 'Research'],
       content: `A few things: I have never published my thoughts on a book. I haven't read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.
@@ -287,7 +287,7 @@ For the sake of not overthinking this blog post, I will just say I am still unsu
 
 Cowen didn't create the Crusonia plant. He revived the idea, originally created by economist Frank Knight, to provide an example of a free lunch. The Crusonia plant is:
 
-QUOTE:a mythical, automatically growing crop which generates more output each period. If you lay the seeds, the plant just grows; you don't have to water it or tend to it.
+QUOTE:...a mythical, automatically growing crop which generates more output each period. If you lay the seeds, the plant just grows; you don't have to water it or tend to it.
 
 Cowen argues that the analogy of the Crusonia plant can solve issues of aggregation. "When in doubt, choose the Crusonia plant" — easy. In other words, Cowen sets up a principle in which we should aim to identify choices or policies that are equivalent to the "unceasing yield, namely ongoing and self-sustaining surges in value" of the Crusonia plant.
 
