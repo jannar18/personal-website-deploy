@@ -3,6 +3,27 @@ import React, { useState } from 'react';
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeBlogPost, setActiveBlogPost] = useState(null);
+  const [subscribeStatus, setSubscribeStatus] = useState('');
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      setSubscribeStatus('Thanks for subscribing!');
+      form.reset();
+      setTimeout(() => setSubscribeStatus(''), 3000);
+    } catch (error) {
+      setSubscribeStatus('Something went wrong. Please try again.');
+      setTimeout(() => setSubscribeStatus(''), 3000);
+    }
+  };
 
 
   // Blog post data
@@ -1373,6 +1394,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                   method="POST"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
+                  onSubmit={handleSubscribe}
                   style={{
                     display: 'flex',
                     gap: '8px',
@@ -1429,6 +1451,11 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     Subscribe
                   </button>
                 </form>
+                {subscribeStatus && (
+                  <p style={{ fontSize: '13px', color: '#8b7355', marginTop: '12px' }}>
+                    {subscribeStatus}
+                  </p>
+                )}
               </div>
             </section>
           )}
@@ -1904,6 +1931,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              onSubmit={handleSubscribe}
               style={{
                 display: 'flex',
                 gap: '8px',
@@ -1960,6 +1988,11 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 Subscribe
               </button>
             </form>
+            {subscribeStatus && (
+              <p style={{ fontSize: '13px', color: '#8b7355', marginTop: '12px' }}>
+                {subscribeStatus}
+              </p>
+            )}
           </div>
 
           {/* Footer Links */}
