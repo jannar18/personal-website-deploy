@@ -206,6 +206,14 @@ LISTITEM:I clicked push to origin myself
 LISTITEM:Opened my browser and there was my website, successfully published on the World Wide Web with Netlify!
 
 Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
+    },
+    {
+      id: 2,
+      date: 'January 30, 2025',
+      title: 'Blog #2: My First Book Review - Stubborn Attachments by Tyler Cowen',
+      excerpt: 'Work in progress.',
+      tags: ['Book Review', 'Research'],
+      content: `Work in progress.`
     }
   ];
 
