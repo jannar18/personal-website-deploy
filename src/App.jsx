@@ -210,7 +210,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
     {
       id: 2,
       date: 'January 30, 2025',
-      title: 'Blog #2: My First Book Review - Stubborn Attachments by Tyler Cowen',
+      title: 'Blog #2: I\'ve Been Convinced by Crusonia Plants - Stubborn Attachments by Tyler Cowen',
       excerpt: 'A few things: I have never published my thoughts on a book. I haven\'t read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.',
       tags: ['Book Review', 'Research'],
       content: `A few things: I have never published my thoughts on a book. I haven't read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.
@@ -1789,7 +1789,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
           gap: '20px'
         }}>
           <div>
-            © 2025 — Built with intention
+            © 2026 — Built with intention
           </div>
           <div style={{
             display: 'flex',
