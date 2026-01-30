@@ -1357,27 +1357,15 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
               {/* Subscribe Section on Writing Page */}
               <div style={{
                 marginTop: '48px',
-                padding: '32px',
-                background: 'rgba(255,255,255,0.4)',
-                border: '1px solid rgba(205,180,155,0.3)',
-                borderRadius: '2px',
-                textAlign: 'center'
+                paddingTop: '24px',
+                borderTop: '1px solid rgba(205,180,155,0.3)'
               }}>
-                <h4 style={{
-                  fontSize: '20px',
-                  fontWeight: '400',
-                  color: '#3d3028',
-                  fontFamily: '"Cormorant Garamond", serif',
-                  marginBottom: '8px'
-                }}>
-                  Never Miss a Post
-                </h4>
                 <p style={{
-                  fontSize: '14px',
-                  color: '#8b7355',
-                  marginBottom: '20px'
+                  fontSize: '13px',
+                  color: '#9d8b7a',
+                  marginBottom: '12px'
                 }}>
-                  Subscribe to get new posts delivered to your inbox
+                  Get notified of new posts
                 </p>
                 <form
                   name="subscribe"
@@ -1386,11 +1374,9 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                   netlify-honeypot="bot-field"
                   style={{
                     display: 'flex',
-                    gap: '12px',
-                    justifyContent: 'center',
+                    gap: '8px',
                     flexWrap: 'wrap',
-                    maxWidth: '400px',
-                    margin: '0 auto'
+                    maxWidth: '320px'
                   }}
                 >
                   <input type="hidden" name="form-name" value="subscribe" />
@@ -1402,12 +1388,12 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     required
                     style={{
                       flex: '1',
-                      minWidth: '200px',
-                      padding: '12px 16px',
+                      minWidth: '180px',
+                      padding: '8px 12px',
                       border: '1px solid rgba(205,180,155,0.4)',
                       borderRadius: '2px',
-                      background: 'rgba(255,255,255,0.8)',
-                      fontSize: '14px',
+                      background: 'rgba(255,255,255,0.6)',
+                      fontSize: '13px',
                       fontFamily: 'inherit',
                       color: '#3d3028',
                       outline: 'none'
@@ -1416,21 +1402,21 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                   <button
                     type="submit"
                     style={{
-                      padding: '12px 24px',
-                      background: '#bc8f8f',
-                      color: 'white',
-                      border: 'none',
+                      padding: '8px 16px',
+                      background: 'transparent',
+                      color: '#8b7355',
+                      border: '1px solid rgba(205,180,155,0.4)',
                       borderRadius: '2px',
-                      fontSize: '14px',
+                      fontSize: '13px',
                       fontFamily: 'inherit',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#a67b7b';
+                      e.currentTarget.style.background = 'rgba(205,180,155,0.15)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#bc8f8f';
+                      e.currentTarget.style.background = 'transparent';
                     }}
                   >
                     Subscribe
@@ -1560,13 +1546,12 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                           <h2 key={i} style={{
                             marginTop: '56px',
                             marginBottom: '24px',
-                            fontSize: '26px',
-                            fontWeight: '600',
+                            fontSize: '28px',
+                            fontWeight: '400',
                             color: '#3d3028',
                             fontFamily: '"Cormorant Garamond", serif',
-                            borderBottom: '3px solid #bc8f8f',
-                            paddingBottom: '12px',
-                            letterSpacing: '0.5px'
+                            borderBottom: '2px solid rgba(188,143,143,0.3)',
+                            paddingBottom: '12px'
                           }}>
                             {title}
                           </h2>
@@ -1895,28 +1880,16 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
         }}>
           {/* Subscribe Section */}
           <div style={{
-            marginBottom: '40px',
-            padding: '32px',
-            background: 'rgba(255,255,255,0.4)',
-            border: '1px solid rgba(205,180,155,0.3)',
-            borderRadius: '2px',
-            textAlign: 'center'
+            marginBottom: '32px',
+            paddingBottom: '24px',
+            borderBottom: '1px solid rgba(205,180,155,0.2)'
           }}>
-            <h4 style={{
-              fontSize: '20px',
-              fontWeight: '400',
-              color: '#3d3028',
-              fontFamily: '"Cormorant Garamond", serif',
-              marginBottom: '8px'
-            }}>
-              Stay Updated
-            </h4>
             <p style={{
-              fontSize: '14px',
-              color: '#8b7355',
-              marginBottom: '20px'
+              fontSize: '13px',
+              color: '#9d8b7a',
+              marginBottom: '12px'
             }}>
-              Get notified when I publish new writing
+              Get notified of new posts
             </p>
             <form
               name="subscribe"
@@ -1925,11 +1898,9 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
               netlify-honeypot="bot-field"
               style={{
                 display: 'flex',
-                gap: '12px',
-                justifyContent: 'center',
+                gap: '8px',
                 flexWrap: 'wrap',
-                maxWidth: '400px',
-                margin: '0 auto'
+                maxWidth: '320px'
               }}
             >
               <input type="hidden" name="form-name" value="subscribe" />
@@ -1941,12 +1912,12 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 required
                 style={{
                   flex: '1',
-                  minWidth: '200px',
-                  padding: '12px 16px',
+                  minWidth: '180px',
+                  padding: '8px 12px',
                   border: '1px solid rgba(205,180,155,0.4)',
                   borderRadius: '2px',
-                  background: 'rgba(255,255,255,0.8)',
-                  fontSize: '14px',
+                  background: 'rgba(255,255,255,0.6)',
+                  fontSize: '13px',
                   fontFamily: 'inherit',
                   color: '#3d3028',
                   outline: 'none'
@@ -1955,21 +1926,21 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
               <button
                 type="submit"
                 style={{
-                  padding: '12px 24px',
-                  background: '#bc8f8f',
-                  color: 'white',
-                  border: 'none',
+                  padding: '8px 16px',
+                  background: 'transparent',
+                  color: '#8b7355',
+                  border: '1px solid rgba(205,180,155,0.4)',
                   borderRadius: '2px',
-                  fontSize: '14px',
+                  fontSize: '13px',
                   fontFamily: 'inherit',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#a67b7b';
+                  e.currentTarget.style.background = 'rgba(205,180,155,0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#bc8f8f';
+                  e.currentTarget.style.background = 'transparent';
                 }}
               >
                 Subscribe
