@@ -446,7 +446,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                 <article
                   onClick={() => {
                     setActiveSection('writing');
-                    setActiveBlogPost(blogPosts[0]);
+                    setActiveBlogPost(blogPosts[blogPosts.length - 1]);
                   }}
                   style={{
                     padding: '40px',
@@ -472,7 +472,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     marginBottom: '16px',
                     letterSpacing: '1px'
                   }}>
-                    {blogPosts[0].date}
+                    {blogPosts[blogPosts.length - 1].date}
                   </div>
                   
                   <h4 style={{
@@ -483,7 +483,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     fontFamily: '"Cormorant Garamond", serif',
                     lineHeight: '1.3'
                   }}>
-                    {blogPosts[0].title}
+                    {blogPosts[blogPosts.length - 1].title}
                   </h4>
                   
                   <p style={{
@@ -492,7 +492,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     color: '#5a4a3a',
                     marginBottom: '20px'
                   }}>
-                    {blogPosts[0].excerpt.substring(0, 200)}...
+                    {blogPosts[blogPosts.length - 1].excerpt.substring(0, 200)}...
                   </p>
                   
                   <div style={{
@@ -500,7 +500,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     gap: '12px',
                     flexWrap: 'wrap'
                   }}>
-                    {blogPosts[0].tags.map(tag => (
+                    {blogPosts[blogPosts.length - 1].tags.map(tag => (
                       <span
                         key={tag}
                         style={{
