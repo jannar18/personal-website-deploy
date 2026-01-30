@@ -211,9 +211,115 @@ Now I just need to have Claude check this for errors, and add in an actual page 
       id: 2,
       date: 'January 30, 2025',
       title: 'Blog #2: My First Book Review - Stubborn Attachments by Tyler Cowen',
-      excerpt: 'Work in progress.',
+      excerpt: 'A few things: I have never published my thoughts on a book. I haven\'t read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.',
       tags: ['Book Review', 'Research'],
-      content: `Work in progress.`
+      content: `A few things: I have never published my thoughts on a book. I haven't read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.
+
+It is interesting to note that Claude organized these notes for me with no direction. I'm not sure I would organize them the same way, but I also thought it was curious to keep it around like this.
+
+Here are the ideas left floating at the top of my mind after reading yesterday:
+
+HEADER:Key Concepts
+LISTITEM:The Crusonia plant
+LISTITEM:Sustainable economic growth
+LISTITEM:Wealth Plus
+LISTITEM:Human rights
+LISTITEM:Pluralism
+LISTITEM:Time distance horizon
+LISTITEM:Faith
+
+HEADER:Philosophical Framework
+LISTITEM:Radical uncertainty breaks down arguments for consequentialism over human rights
+LISTITEM:Common sense morality ruled the book
+LISTITEM:Intuitions of right or wrong feel good — but is it the right way to think of things? Can we trust ourselves and our brain?
+LISTITEM:Our minds can be uncertain and irrational
+LISTITEM:Right and wrong are objective and powerful
+LISTITEM:Cowen believes in absolute human rights — so we just assume human rights are intrinsic
+LISTITEM:We need to lessen the moral distance we have with future generations and have faith in the future
+LISTITEM:We have a moral imperative to have a deep concern for the distant future
+LISTITEM:Epistemic critique → why we should respect individual rights
+LISTITEM:Radical uncertainty gives us the freedom to act morally
+LISTITEM:Issue of rights is not strictly absolute in the case of the end of the world — lifeboat ethics
+LISTITEM:Even if rights are not always absolute (like in a case of the world ending), we have a rights theory where rights are mostly absolute at least in a world in which the Crusonia plants and the froth of consequentialist uncertainty exist
+LISTITEM:Common sense morality and intuition are deeply connected to what is right
+
+HEADER:Questions / Tensions
+LISTITEM:Is there such a thing as free lunches? Crusonia plant is a free lunch
+LISTITEM:Time may reveal free lunches — we should think more distantly
+LISTITEM:When in doubt, choose the Crusonia plant
+LISTITEM:What is the difference between rules and rights?
+LISTITEM:Are negative rights rules?
+LISTITEM:How do we define civilization?
+LISTITEM:Why does he bring up the Solow model versus increasing returns model?
+LISTITEM:Do all fruitful societies require faith?
+
+HEADER:Economic Arguments
+LISTITEM:GDP should be measured to include Wealth Plus (human welfare, etc.)
+LISTITEM:Crusonia plant can solve issues of aggregation
+LISTITEM:If we are thinking in a long time horizon, utilitarian thinking may lead us to conclude that it is more beneficial to redistribute to the wealthy and improve trickle down effects
+LISTITEM:We should instead focus on Crusonia plants and overall choose the path of greatest good/value/sustainable economic growth
+LISTITEM:Ideas are the wellspring of economic growth
+
+HEADER:Personal Experience as a Reader
+LISTITEM:As a newbie to this field, many terms were new and left my head spinning in certain moments
+LISTITEM:Difficult to summarize conclusions or takeaways in certain moments
+LISTITEM:Surprised by lack of tech talk
+
+HEADER:Broader Takeaways
+LISTITEM:We are in an investment drought
+LISTITEM:Institutions are important
+LISTITEM:"Crusonia plants reign supreme"
+LISTITEM:We should stick to our rules and rights rigidly
+LISTITEM:Greater sustainable economic growth
+LISTITEM:We are most likely wrong — we should be skeptical of really particular instruments built to promote good
+LISTITEM:Freedom and prosperity are valuable
+LISTITEM:We should be more charitable
+LISTITEM:Choose the Crusonia plant unless it is obvious like the world is ending or human rights intervene
+LISTITEM:Ideas are the foundation of value in society
+
+SEPARATOR:
+
+SECTION:The Crusonia Plant
+
+For the sake of not overthinking this blog post, I will just say I am still unsure of my conclusions of this book. That's not satisfying to say, but I feel that my lack of knowledge in this field is enough to not trust my conclusions, at least not enough to state them concretely, yet. What I do know is that my instincts tell me chasing Crusonia plants sounds fun, it seems valuable to chase them, and I am definitely convinced by their power.
+
+Cowen didn't create the Crusonia plant. He revived the idea, originally created by economist Frank Knight, to provide an example of a free lunch. The Crusonia plant is:
+
+QUOTE:a mythical, automatically growing crop which generates more output each period. If you lay the seeds, the plant just grows; you don't have to water it or tend to it.
+
+Cowen argues that the analogy of the Crusonia plant can solve issues of aggregation. "When in doubt, choose the Crusonia plant" — easy. In other words, Cowen sets up a principle in which we should aim to identify choices or policies that are equivalent to the "unceasing yield, namely ongoing and self-sustaining surges in value" of the Crusonia plant.
+
+I think it is important to note that the strength of the Crusonia plant relies, in some ways, on the assumption that we have a deep concern for the future. Throughout the book, I often found the Crusonia plant to be a guiding force. No matter the terms or argument, the Crusonia plant reigned supreme as the aim. The only cases in which this wasn't true were: one, the scenario in which the world is ending, and two, respecting the rules of human rights when applicable.
+
+SECTION:When Not to Choose the Crusonia Plant
+
+Although Cowen's Crusonia plant is an obvious push for choosing paths of greater economic growth, it's important to note that Cowen's primary goal is to return to a society based on good principles; human rights became a primary topic of the discussion.
+
+QUOTE:We need to develop a tougher, more dedicated, and indeed a more stubborn attachment to prosperity and freedom.
+
+He begins the book with a framework that ignores meta-ethics, states that there is an objective right or wrong, and assumes we as readers have an intuition of what that right or wrong is in any given scenario. He also recognizes both the limitations of the human mind and the fundamental messiness to the nature of good, holding pluralism as a core moral intuition.
+
+Interestingly enough, when asked what Cowen said about human rights or why he argued their importance, I couldn't remember an answer. This is partially because when he first brings up The Principle of Growth Plus Rights, he simply states that we should think of rights as binding and absolute — we ought not to violate human rights. Later in Chapter 6, the argument for human rights becomes clearer when he discusses the epistemic critique:
+
+QUOTE:We should choose the course that is most likely to be correct, keeping in mind that at the end of the day we are still more likely to be wrong than right.
+
+Our radical uncertainty is actually the key to our freedom to act morally; since we most likely cannot predict the outcome of our actions, when faced with a frothy chance at high economic growth versus a path that protects human rights, we ought to just choose the path that protects human rights. There is a chance that choosing that path can also lead to beneficial economic growth.
+
+SECTION:Great Ideas Are the Crusonia Plants?
+
+Towards the end of the book, Cowen discusses once-and-for-all changes vs. growth rate changes by comparing the Solow Model and the Increasing Returns Model. The Solow Model is known as the most prominent economic approach to growth where "...national output is the result of capital inputs, labor inputs, and technological progress." One of the strengths of this model is its ability to provide quick economic recovery after one-time negative shocks. Boosts in savings and investment support fast catch-up growth during transition growth paths but do not provide long-run growth rates.
+
+The Increasing Returns Model indicates growth leads to more growth; "...larger markets generate stronger incentives for idea production because innovators can sell their products to a larger market..." In this case, more growth continues to lead to new ideas, which leads to more growth. Here he says something interesting:
+
+QUOTE:Once an idea has been generated, it can be used many times by many different people at very low marginal cost. The first idea spreads, begets subsequent ideas, and so growth increases.
+
+The weakness of this model is that any negative shocks will shrink the economy and limit future growth rates without the catch-up methods that the Solow Model has.
+
+The point of his discussion wasn't to pick which one of these models is better (which did confuse me at first). The point of discussing these models was to highlight that both "...emphasize ideas as the wellspring of economic growth." Ideas are fundamental to a world in which we aim to continue to chase paths leading to greater sustainable economic growth. This is very cool to me.
+
+QUOTE:New ideas are the product of human reason; it was Aristotle who defined man as the rational animal. A preoccupation with pursuing growth—or some modified version of the growth ideal—therefore means a preoccupation with ideas, a preoccupation with cultivating human reason, and a preoccupation with the notion that man should realize, perfect, and extend his nature as a generator of powerful ideas that can change the world.
+
+We live in a world of Crusonia plants. Cowen's ability to use such a strong idea to explain his arguments, in a book that arguably concludes with this message, has definitely caused me to be biased towards trusting the rest of his ideas.`
     }
   ];
 
@@ -446,7 +552,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                 <article
                   onClick={() => {
                     setActiveSection('writing');
-                    setActiveBlogPost(blogPosts[0]);
+                    setActiveBlogPost(blogPosts[blogPosts.length - 1]);
                   }}
                   style={{
                     padding: '40px',
@@ -472,7 +578,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     marginBottom: '16px',
                     letterSpacing: '1px'
                   }}>
-                    {blogPosts[0].date}
+                    {blogPosts[blogPosts.length - 1].date}
                   </div>
                   
                   <h4 style={{
@@ -483,7 +589,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     fontFamily: '"Cormorant Garamond", serif',
                     lineHeight: '1.3'
                   }}>
-                    {blogPosts[0].title}
+                    {blogPosts[blogPosts.length - 1].title}
                   </h4>
                   
                   <p style={{
@@ -492,7 +598,9 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     color: '#5a4a3a',
                     marginBottom: '20px'
                   }}>
-                    {blogPosts[0].excerpt.substring(0, 200)}...
+                    {blogPosts[blogPosts.length - 1].excerpt.length > 200
+                      ? `${blogPosts[blogPosts.length - 1].excerpt.substring(0, 200)}...`
+                      : blogPosts[blogPosts.length - 1].excerpt}
                   </p>
                   
                   <div style={{
@@ -500,7 +608,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     gap: '12px',
                     flexWrap: 'wrap'
                   }}>
-                    {blogPosts[0].tags.map(tag => (
+                    {blogPosts[blogPosts.length - 1].tags.map(tag => (
                       <span
                         key={tag}
                         style={{
@@ -1157,7 +1265,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                 flexDirection: 'column',
                 gap: '32px'
               }}>
-                {blogPosts.map(post => (
+                {[...blogPosts].reverse().map(post => (
                   <article
                     key={post.id}
                     onClick={() => setActiveBlogPost(post)}
@@ -1204,7 +1312,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                       color: '#5a4a3a',
                       marginBottom: '16px'
                     }}>
-                      {post.excerpt.substring(0, 200)}...
+                      {post.excerpt.length > 200 ? `${post.excerpt.substring(0, 200)}...` : post.excerpt}
                     </p>
                     
                     <div style={{
@@ -1354,6 +1462,87 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                           }}>
                             {time}
                           </p>
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle SECTION (major section headers)
+                      if (line.startsWith('SECTION:')) {
+                        const title = line.replace('SECTION:', '');
+                        elements.push(
+                          <h2 key={i} style={{
+                            marginTop: '56px',
+                            marginBottom: '24px',
+                            fontSize: '28px',
+                            fontWeight: '400',
+                            color: '#3d3028',
+                            fontFamily: '"Cormorant Garamond", serif',
+                            borderBottom: '2px solid rgba(188,143,143,0.3)',
+                            paddingBottom: '12px'
+                          }}>
+                            {title}
+                          </h2>
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle HEADER (subsection headers)
+                      if (line.startsWith('HEADER:')) {
+                        const title = line.replace('HEADER:', '');
+                        elements.push(
+                          <h3 key={i} style={{
+                            marginTop: '36px',
+                            marginBottom: '16px',
+                            fontSize: '18px',
+                            fontWeight: '600',
+                            color: '#8b7355',
+                            letterSpacing: '0.5px'
+                          }}>
+                            {title}
+                          </h3>
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle SEPARATOR (horizontal rule)
+                      if (line.startsWith('SEPARATOR:')) {
+                        elements.push(
+                          <hr key={i} style={{
+                            marginTop: '48px',
+                            marginBottom: '48px',
+                            border: 'none',
+                            borderTop: '1px solid rgba(205,180,155,0.4)',
+                            width: '60%',
+                            marginLeft: 'auto',
+                            marginRight: 'auto'
+                          }} />
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle QUOTE (styled blockquote)
+                      if (line.startsWith('QUOTE:')) {
+                        const text = line.replace('QUOTE:', '');
+                        elements.push(
+                          <blockquote key={i} style={{
+                            marginTop: '24px',
+                            marginBottom: '24px',
+                            paddingLeft: '24px',
+                            paddingTop: '16px',
+                            paddingBottom: '16px',
+                            borderLeft: '3px solid #bc8f8f',
+                            background: 'rgba(205,180,155,0.1)',
+                            fontStyle: 'italic',
+                            color: '#5a4a3a',
+                            fontSize: '16px',
+                            lineHeight: '1.8'
+                          }}>
+                            "{text}"
+                          </blockquote>
                         );
                         i++;
                         continue;
@@ -1600,7 +1789,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
           gap: '20px'
         }}>
           <div>
-            © 2026 — Built with intention
+            © 2025 — Built with intention
           </div>
           <div style={{
             display: 'flex',
