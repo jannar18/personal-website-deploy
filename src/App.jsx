@@ -1358,7 +1358,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
               <div style={{
                 marginTop: '48px',
                 paddingTop: '24px',
-                borderTop: '1px solid rgba(205,180,155,0.3)'
+                borderTop: '1px solid rgba(205,180,155,0.3)',
+                textAlign: 'center'
               }}>
                 <p style={{
                   fontSize: '13px',
@@ -1376,7 +1377,9 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     display: 'flex',
                     gap: '8px',
                     flexWrap: 'wrap',
-                    maxWidth: '320px'
+                    maxWidth: '320px',
+                    margin: '0 auto',
+                    justifyContent: 'center'
                   }}
                 >
                   <input type="hidden" name="form-name" value="subscribe" />
@@ -1413,10 +1416,14 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(205,180,155,0.15)';
+                      e.currentTarget.style.background = '#bc8f8f';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = '#bc8f8f';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = '#8b7355';
+                      e.currentTarget.style.borderColor = 'rgba(205,180,155,0.4)';
                     }}
                   >
                     Subscribe
@@ -1882,7 +1889,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
           <div style={{
             marginBottom: '32px',
             paddingBottom: '24px',
-            borderBottom: '1px solid rgba(205,180,155,0.2)'
+            borderBottom: '1px solid rgba(205,180,155,0.2)',
+            textAlign: 'center'
           }}>
             <p style={{
               fontSize: '13px',
@@ -1900,7 +1908,9 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 display: 'flex',
                 gap: '8px',
                 flexWrap: 'wrap',
-                maxWidth: '320px'
+                maxWidth: '320px',
+                margin: '0 auto',
+                justifyContent: 'center'
               }}
             >
               <input type="hidden" name="form-name" value="subscribe" />
@@ -1937,10 +1947,14 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(205,180,155,0.15)';
+                  e.currentTarget.style.background = '#bc8f8f';
+                  e.currentTarget.style.color = 'white';
+                  e.currentTarget.style.borderColor = '#bc8f8f';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = '#8b7355';
+                  e.currentTarget.style.borderColor = 'rgba(205,180,155,0.4)';
                 }}
               >
                 Subscribe
