@@ -1353,6 +1353,90 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                   </article>
                 ))}
               </div>
+
+              {/* Subscribe Section on Writing Page */}
+              <div style={{
+                marginTop: '48px',
+                padding: '32px',
+                background: 'rgba(255,255,255,0.4)',
+                border: '1px solid rgba(205,180,155,0.3)',
+                borderRadius: '2px',
+                textAlign: 'center'
+              }}>
+                <h4 style={{
+                  fontSize: '20px',
+                  fontWeight: '400',
+                  color: '#3d3028',
+                  fontFamily: '"Cormorant Garamond", serif',
+                  marginBottom: '8px'
+                }}>
+                  Never Miss a Post
+                </h4>
+                <p style={{
+                  fontSize: '14px',
+                  color: '#8b7355',
+                  marginBottom: '20px'
+                }}>
+                  Subscribe to get new posts delivered to your inbox
+                </p>
+                <form
+                  name="subscribe"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  style={{
+                    display: 'flex',
+                    gap: '12px',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap',
+                    maxWidth: '400px',
+                    margin: '0 auto'
+                  }}
+                >
+                  <input type="hidden" name="form-name" value="subscribe" />
+                  <input type="hidden" name="bot-field" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    style={{
+                      flex: '1',
+                      minWidth: '200px',
+                      padding: '12px 16px',
+                      border: '1px solid rgba(205,180,155,0.4)',
+                      borderRadius: '2px',
+                      background: 'rgba(255,255,255,0.8)',
+                      fontSize: '14px',
+                      fontFamily: 'inherit',
+                      color: '#3d3028',
+                      outline: 'none'
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    style={{
+                      padding: '12px 24px',
+                      background: '#bc8f8f',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '2px',
+                      fontSize: '14px',
+                      fontFamily: 'inherit',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#a67b7b';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#bc8f8f';
+                    }}
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </section>
           )}
 
@@ -1807,29 +1891,117 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
           paddingTop: '40px',
           borderTop: '1px solid rgba(61,48,40,0.15)',
           fontSize: '13px',
-          color: '#9d8b7a',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '20px'
+          color: '#9d8b7a'
         }}>
-          <div>
-            © 2026 — Built with intention
+          {/* Subscribe Section */}
+          <div style={{
+            marginBottom: '40px',
+            padding: '32px',
+            background: 'rgba(255,255,255,0.4)',
+            border: '1px solid rgba(205,180,155,0.3)',
+            borderRadius: '2px',
+            textAlign: 'center'
+          }}>
+            <h4 style={{
+              fontSize: '20px',
+              fontWeight: '400',
+              color: '#3d3028',
+              fontFamily: '"Cormorant Garamond", serif',
+              marginBottom: '8px'
+            }}>
+              Stay Updated
+            </h4>
+            <p style={{
+              fontSize: '14px',
+              color: '#8b7355',
+              marginBottom: '20px'
+            }}>
+              Get notified when I publish new writing
+            </p>
+            <form
+              name="subscribe"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              style={{
+                display: 'flex',
+                gap: '12px',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                maxWidth: '400px',
+                margin: '0 auto'
+              }}
+            >
+              <input type="hidden" name="form-name" value="subscribe" />
+              <input type="hidden" name="bot-field" />
+              <input
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                style={{
+                  flex: '1',
+                  minWidth: '200px',
+                  padding: '12px 16px',
+                  border: '1px solid rgba(205,180,155,0.4)',
+                  borderRadius: '2px',
+                  background: 'rgba(255,255,255,0.8)',
+                  fontSize: '14px',
+                  fontFamily: 'inherit',
+                  color: '#3d3028',
+                  outline: 'none'
+                }}
+              />
+              <button
+                type="submit"
+                style={{
+                  padding: '12px 24px',
+                  background: '#bc8f8f',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '2px',
+                  fontSize: '14px',
+                  fontFamily: 'inherit',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#a67b7b';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#bc8f8f';
+                }}
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
+
+          {/* Footer Links */}
           <div style={{
             display: 'flex',
-            gap: '24px'
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px'
           }}>
-            <a href="https://linkedin.com/in/julianna-roberts-1118m/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
-              LinkedIn
-            </a>
-            <a href="https://github.com/jannar18" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
-              GitHub
-            </a>
-            <a href="mailto:juliannaroberts18@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Email
-            </a>
+            <div>
+              © 2026 — Built with intention
+            </div>
+            <div style={{
+              display: 'flex',
+              gap: '24px'
+            }}>
+              <a href="https://linkedin.com/in/julianna-roberts-1118m/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
+                LinkedIn
+              </a>
+              <a href="https://github.com/jannar18" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
+                GitHub
+              </a>
+              <a href="mailto:juliannaroberts18@gmail.com" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }}>
+                Email
+              </a>
+            </div>
           </div>
         </footer>
       </div>
