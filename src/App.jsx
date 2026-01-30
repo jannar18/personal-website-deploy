@@ -492,7 +492,9 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                     color: '#5a4a3a',
                     marginBottom: '20px'
                   }}>
-                    {blogPosts[blogPosts.length - 1].excerpt.substring(0, 200)}...
+                    {blogPosts[blogPosts.length - 1].excerpt.length > 200
+                      ? `${blogPosts[blogPosts.length - 1].excerpt.substring(0, 200)}...`
+                      : blogPosts[blogPosts.length - 1].excerpt}
                   </p>
                   
                   <div style={{
@@ -1157,7 +1159,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                 flexDirection: 'column',
                 gap: '32px'
               }}>
-                {blogPosts.map(post => (
+                {[...blogPosts].reverse().map(post => (
                   <article
                     key={post.id}
                     onClick={() => setActiveBlogPost(post)}
@@ -1204,7 +1206,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
                       color: '#5a4a3a',
                       marginBottom: '16px'
                     }}>
-                      {post.excerpt.substring(0, 200)}...
+                      {post.excerpt.length > 200 ? `${post.excerpt.substring(0, 200)}...` : post.excerpt}
                     </p>
                     
                     <div style={{
@@ -1600,7 +1602,7 @@ Now I just need to have Claude check this for errors, and add in an actual page 
           gap: '20px'
         }}>
           <div>
-            © 2026 — Built with intention
+            © 2025 — Built with intention
           </div>
           <div style={{
             display: 'flex',
