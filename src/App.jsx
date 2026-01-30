@@ -215,7 +215,9 @@ Now I just need to have Claude check this for errors, and add in an actual page 
       tags: ['Book Review', 'Research'],
       content: `A few things: I have never published my thoughts on a book. I haven't read a book front to back in one day since junior high. I have never read a book on economics apart from my high school economics textbook. I had a great time reading. I am now obsessed with thinking about Crusonia plants.
 
-It is interesting to note that Claude organized these notes for me with no direction. I'm not sure I would organize them the same way, but I also thought it was curious to keep it around like this.
+SEPARATOR:
+
+NOTE:It is interesting to note that Claude organized these notes for me with no direction. I'm not sure I would organize them the same way, but I also thought it was curious to keep it around like this.
 
 Here are the ideas left floating at the top of my mind after reading yesterday:
 
@@ -1474,15 +1476,39 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                           <h2 key={i} style={{
                             marginTop: '56px',
                             marginBottom: '24px',
-                            fontSize: '28px',
-                            fontWeight: '400',
+                            fontSize: '26px',
+                            fontWeight: '600',
                             color: '#3d3028',
                             fontFamily: '"Cormorant Garamond", serif',
-                            borderBottom: '2px solid rgba(188,143,143,0.3)',
-                            paddingBottom: '12px'
+                            borderBottom: '3px solid #bc8f8f',
+                            paddingBottom: '12px',
+                            letterSpacing: '0.5px'
                           }}>
                             {title}
                           </h2>
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle NOTE (sidebar/aside style)
+                      if (line.startsWith('NOTE:')) {
+                        const text = line.replace('NOTE:', '');
+                        elements.push(
+                          <aside key={i} style={{
+                            marginTop: '24px',
+                            marginBottom: '32px',
+                            padding: '20px 24px',
+                            background: 'rgba(205,180,155,0.12)',
+                            borderRadius: '4px',
+                            fontSize: '14px',
+                            fontStyle: 'italic',
+                            color: '#8b7355',
+                            lineHeight: '1.7',
+                            borderLeft: '3px solid rgba(188,143,143,0.4)'
+                          }}>
+                            {text}
+                          </aside>
                         );
                         i++;
                         continue;
