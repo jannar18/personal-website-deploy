@@ -69,7 +69,7 @@ My goal: To create a personal website I'm proud of, deploy it, and write a blog 
 
 The tasks and advice I was given were to:
 LISTITEM:Set-up Claude - both the desktop and Claude Code
-SUBITEM:To run Claude Code in the "Ghostty" terminal which I later learned was actually the Ghostty terminal
+SUBITEM:To run Claude Code in the "Ghostie" terminal which I later learned was actually the Ghostty terminal
 LISTITEM:Learn about Claude skills using Claude
 SUBITEM:What are its valuable skills?
 SUBITEM:How does Claude learn these skills?
@@ -90,7 +90,7 @@ So I began:
 
 TIMESTAMP:10:30
 LISTITEM:Looked up Claude on Google and downloaded
-LISTITEM:Used Claude in browser to look up how to install Claude Code and use the Ghostty terminal
+LISTITEM:Used Claude in browser to look up how to install Claude Code and use the Ghostie terminal
 LISTITEM:Learned I need Homebrew
 LISTITEM:Asked Claude how to check if Homebrew is installed
 LISTITEM:It was not installed
@@ -1404,88 +1404,6 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 ))}
               </div>
 
-              {/* Subscribe Section on Writing Page */}
-              <div style={{
-                marginTop: '48px',
-                paddingTop: '24px',
-                borderTop: '1px solid rgba(205,180,155,0.3)',
-                textAlign: 'center'
-              }}>
-                <p style={{
-                  fontSize: '13px',
-                  color: '#9d8b7a',
-                  marginBottom: '12px'
-                }}>
-                  Get notified of new posts
-                </p>
-                <form
-                  name="subscribe"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  onSubmit={handleSubscribe}
-                  style={{
-                    display: 'flex',
-                    gap: '8px',
-                    flexWrap: 'wrap',
-                    maxWidth: '320px',
-                    margin: '0 auto',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <input type="hidden" name="form-name" value="subscribe" />
-                  <input type="hidden" name="bot-field" />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    required
-                    style={{
-                      flex: '1',
-                      minWidth: '180px',
-                      padding: '8px 12px',
-                      border: '1px solid rgba(205,180,155,0.4)',
-                      borderRadius: '2px',
-                      background: 'rgba(255,255,255,0.6)',
-                      fontSize: '13px',
-                      fontFamily: 'inherit',
-                      color: '#3d3028',
-                      outline: 'none'
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    style={{
-                      padding: '8px 16px',
-                      background: 'transparent',
-                      color: '#8b7355',
-                      border: '1px solid rgba(205,180,155,0.4)',
-                      borderRadius: '2px',
-                      fontSize: '13px',
-                      fontFamily: 'inherit',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#bc8f8f';
-                      e.currentTarget.style.color = 'white';
-                      e.currentTarget.style.borderColor = '#bc8f8f';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'transparent';
-                      e.currentTarget.style.color = '#8b7355';
-                      e.currentTarget.style.borderColor = 'rgba(205,180,155,0.4)';
-                    }}
-                  >
-                    Subscribe
-                  </button>
-                </form>
-                {subscribeStatus && (
-                  <p style={{ fontSize: '13px', color: '#8b7355', marginTop: '12px' }}>
-                    {subscribeStatus}
-                  </p>
-                )}
-              </div>
             </section>
           )}
 
@@ -1581,24 +1499,83 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         continue;
                       }
                       
-                      // Handle TIMESTAMP
+                      // Handle TIMESTAMP (collapsible)
                       if (line.startsWith('TIMESTAMP:')) {
                         const time = line.replace('TIMESTAMP:', '');
+                        const timestampKey = `timestamp-${i}`;
+                        const isExpanded = expandedHeaders[timestampKey];
+
+                        // Collect all list items that follow this timestamp
+                        const timestampListItems = [];
+                        let j = i + 1;
+                        while (j < lines.length &&
+                               (lines[j].startsWith('LISTITEM:') ||
+                                lines[j].startsWith('SUBITEM:') ||
+                                lines[j].startsWith('NUMBERED:') ||
+                                lines[j].trim() === '')) {
+                          if (lines[j].trim() !== '') {
+                            const itemLine = lines[j];
+                            if (itemLine.startsWith('LISTITEM:')) {
+                              timestampListItems.push({ type: 'main', text: itemLine.replace('LISTITEM:', '') });
+                            } else if (itemLine.startsWith('SUBITEM:')) {
+                              timestampListItems.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
+                            } else if (itemLine.startsWith('NUMBERED:')) {
+                              timestampListItems.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
+                            }
+                          }
+                          j++;
+                        }
+
                         elements.push(
-                          <p key={i} style={{
-                            marginBottom: '16px',
-                            marginTop: '48px',
-                            fontWeight: '600',
-                            color: '#8b7355',
-                            fontSize: '18px',
-                            letterSpacing: '0.5px',
-                            borderBottom: '1px solid rgba(205,180,155,0.3)',
-                            paddingBottom: '8px'
-                          }}>
-                            {time}
-                          </p>
+                          <div key={timestampKey} style={{ marginTop: '48px' }}>
+                            <h3
+                              onClick={() => toggleHeader(timestampKey)}
+                              style={{
+                                marginBottom: isExpanded ? '16px' : '0',
+                                fontWeight: '600',
+                                color: '#8b7355',
+                                fontSize: '18px',
+                                letterSpacing: '0.5px',
+                                borderBottom: '1px solid rgba(205,180,155,0.3)',
+                                paddingBottom: '8px',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                userSelect: 'none'
+                              }}
+                            >
+                              <span style={{
+                                fontSize: '12px',
+                                transition: 'transform 0.2s ease',
+                                transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                                display: 'inline-block'
+                              }}>
+                                ▶
+                              </span>
+                              {time}
+                            </h3>
+                            {isExpanded && timestampListItems.length > 0 && (
+                              <div style={{ marginBottom: '24px', paddingLeft: '20px' }}>
+                                {timestampListItems.map((item, idx) => (
+                                  <div key={idx} style={{
+                                    marginBottom: '8px',
+                                    paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                    display: 'flex',
+                                    gap: '12px',
+                                    alignItems: 'flex-start'
+                                  }}>
+                                    {item.type !== 'numbered' && (
+                                      <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                    )}
+                                    <span>{item.text}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         );
-                        i++;
+                        i = j;
                         continue;
                       }
 
