@@ -174,11 +174,11 @@ LISTITEM:This is where I finally learned after hours that I had been making a hu
 DIALOGUE:Me: "I think part of the issue is that i dont have the ghostty terminal"
 DIALOGUE:Claude: "Ah! You're right - Claude Code requires the Ghostty terminal. Let's install Ghostty first:"
 
-Installation Successful!
+TERMINAL:Installation Successful!
 
 I typed claudecode into the Ghostty terminal as suggested by Claude…
 
-command not found
+TERMINAL:command not found
 
 RIP… truly rip.
 
@@ -1839,6 +1839,27 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         continue;
                       }
                       
+                      // Handle TERMINAL (terminal-style output)
+                      if (line.startsWith('TERMINAL:')) {
+                        const text = line.replace('TERMINAL:', '');
+                        elements.push(
+                          <div key={i} style={{
+                            marginBottom: '16px',
+                            fontFamily: 'monospace',
+                            fontSize: '14px',
+                            background: '#2d2d2d',
+                            color: text.toLowerCase().includes('error') || text.toLowerCase().includes('not found') ? '#ff6b6b' : '#98c379',
+                            padding: '12px 16px',
+                            borderRadius: '4px',
+                            display: 'inline-block'
+                          }}>
+                            {text}
+                          </div>
+                        );
+                        i++;
+                        continue;
+                      }
+
                       // Handle Goal: lines
                       if (line.startsWith('Goal:')) {
                         elements.push(
