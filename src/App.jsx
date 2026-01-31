@@ -111,7 +111,7 @@ LISTITEM:It was perfect timing because I thought I could finally use Claude Code
 
 TIMESTAMP:12:22
 LISTITEM:I wanted to keep moving so it was here that decided to make this website using Claude Desktop
-LISTITEM:"I'd like to build a polished personal website for publishing blogs and artifacts using your front-end design skill"
+DIALOGUE:"I'd like to build a polished personal website for publishing blogs and artifacts using your front-end design skill"
 LISTITEM:I confirmed with Claude that I could do this and we began
 LISTITEM:Claude asked me the following:
 NUMBERED:1. Your field/focus area
@@ -134,14 +134,14 @@ LISTITEM:And got called into a meeting
 TIMESTAMP:1:32
 LISTITEM:I came back excited to know my software would be updated and I could use Claude Code.
 LISTITEM:I asked Claude what the best method for editing the infill text is. One of its suggestions was using Claude Code and I really thought I had it installed at this point.
-LISTITEM:It was here I started asking Claude about the ghostie terminal
-DIALOGUE:"Ah! I don't actually know what "ghostie terminal" refers to - I assumed you were using a nickname for your terminal app, but now I'm realizing you might be referring to something specific that I'm not familiar with."
+LISTITEM:It was here I started asking Claude about the Ghostie terminal
+DIALOGUE:"Ah! I don't actually know what "Ghostie terminal" refers to - I assumed you were using a nickname for your terminal app, but now I'm realizing you might be referring to something specific that I'm not familiar with."
 LISTITEM:I felt a bit dumb…
-LISTITEM:So I moved on and simplified: "How do I run Claude code?"
-LISTITEM:I spent a long long time asking Claude how to run Claude Code and it kept telling me to type claude or claude-code in many several different ways. This seemed odd to me. Shouldn't the command be simple? Claude was so convinced that I might have actually installed Claude Code already or that I should figure out how to run it with my out of date macOS software that it had me check to see if the terminal recognized Claude Code as an app? I apologize if this is getting confusing, this is where it got confusing for me, and I definitely could have hyper-analyzed it but instead I kept showing Claude the terminal responses and let it take me on this cyclical journey of continuing to prompt my terminal to open Claude Code and getting 'command not found' in response to every single one.
+LISTITEM:So I moved on and simplified: "How do I run Claude Code?"
+LISTITEM:I spent a long long time asking Claude how to run Claude Code and it kept telling me to type claude or claude-code in many different ways. This seemed odd to me. Shouldn't the command be simple? Claude was so convinced that I might have actually installed Claude Code already or that I should figure out how to run it with my out of date macOS software that it had me check to see if the terminal recognized Claude Code as an app? I apologize if this is getting confusing, this is where it got confusing for me, and I definitely could have hyper-analyzed it but instead I kept showing Claude the terminal responses and let it take me on this cyclical journey of continuing to prompt my terminal to open Claude Code and getting 'command not found' in response to every single one.
 
 TIMESTAMP:1:47
-LISTITEM:"None of these are working"
+DIALOGUE:"None of these are working"
 LISTITEM:I don't understand how…but my software update stopped sometime during the meeting and I had to restart it. RIP!
 LISTITEM:Dealing with this was a ridiculous time sink
 LISTITEM:I started the update again and continued to edit the website with Claude Desktop
@@ -168,11 +168,11 @@ LISTITEM:More edits, writing the about page etc.
 TIMESTAMP:4:17
 LISTITEM:I decided to deploy the site
 LISTITEM:Turns out Claude Code was still not installed and was still not installing with the commands Claude was providing me
-LISTITEM:I thought back to the advice given to me and remembered the ghostie terminal! I decided to cheat and look this up on google because Claude seemed to have no clue what I was talking about…
+LISTITEM:I thought back to the advice given to me and remembered the Ghostie terminal! I decided to cheat and look this up on google because Claude seemed to have no clue what I was talking about…
 LISTITEM:This is where I finally learned after hours that I had been making a huge dumb mistake!! Ghostty, it is called the Ghostty terminal
 
-Me: "I think part of the issue is that i dont have the ghostty terminal"
-Claude: "Ah! You're right - Claude Code requires the Ghostty terminal. Let's install Ghostty first:"
+DIALOGUE:Me: "I think part of the issue is that i dont have the ghostty terminal"
+DIALOGUE:Claude: "Ah! You're right - Claude Code requires the Ghostty terminal. Let's install Ghostty first:"
 
 Installation Successful!
 
@@ -186,10 +186,9 @@ I had just told Liam I was having so much fun… sigh
 
 I'm going to be honest after this I went back into the same cycle with Claude, this time I copied all the responses from terminal and fed them to Claude Desktop who I had been working with all day. After a whirlwind journey….we had finally located the path to Claude Code. I knew this because a cute little pixel creature showed up on my screen. I smiled.
 
-Me: "okay that was a bit confusing for me but claude code now opens with the claude command"
+DIALOGUE:Me: "okay that was a bit confusing for me but claude code now opens with the claude command"
 
-Claude: "Perfect! That's all that matters - you got it working! 🎉
-Now you can just type claude in your terminal and Claude Code will open."
+DIALOGUE:Claude: "Perfect! That's all that matters - you got it working! 🎉 Now you can just type claude in your terminal and Claude Code will open."
 
 Relief.
 
@@ -1743,7 +1742,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                       }
                       
                       // Handle LISTITEM and collect consecutive list items
-                      if (line.startsWith('LISTITEM:') || line.startsWith('SUBITEM:')) {
+                      if (line.startsWith('LISTITEM:') || line.startsWith('SUBITEM:') || line.startsWith('NUMBERED:')) {
                         const listItems = [];
                         while (i < lines.length && (lines[i].startsWith('LISTITEM:') || lines[i].startsWith('SUBITEM:') || lines[i].startsWith('NUMBERED:'))) {
                           const currentLine = lines[i];
@@ -1799,7 +1798,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                       if (line.startsWith('CODEBLOCK:')) {
                         const codeLines = [line.replace('CODEBLOCK:', '')];
                         i++;
-                        while (i < lines.length && (lines[i].startsWith('├') || lines[i].startsWith('│') || lines[i].startsWith('└') || lines[i].trim() === '')) {
+                        while (i < lines.length && (lines[i].startsWith('├') || lines[i].startsWith('│') || lines[i].startsWith('└') || lines[i].trim().startsWith('├') || lines[i].trim().startsWith('│') || lines[i].trim().startsWith('└') || lines[i].trim() === '')) {
                           if (lines[i].trim() !== '') {
                             codeLines.push(lines[i]);
                           }
