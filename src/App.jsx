@@ -1403,21 +1403,6 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     margin: '0 auto',
                     justifyContent: 'center'
                   }}
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = e.target;
-                    const formData = new FormData(form);
-                    fetch('/', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                      body: new URLSearchParams(formData).toString()
-                    })
-                      .then(() => {
-                        alert('Thanks for subscribing!');
-                        form.reset();
-                      })
-                      .catch(() => alert('Something went wrong. Please try again.'));
-                  }}
                 >
                   <input type="hidden" name="form-name" value="subscribe" />
                   <input type="hidden" name="bot-field" />
@@ -1954,21 +1939,6 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 maxWidth: '320px',
                 margin: '0 auto',
                 justifyContent: 'center'
-              }}
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
-                fetch('/', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                  body: new URLSearchParams(formData).toString()
-                })
-                  .then(() => {
-                    alert('Thanks for subscribing!');
-                    form.reset();
-                  })
-                  .catch(() => alert('Something went wrong. Please try again.'));
               }}
             >
               <input type="hidden" name="form-name" value="subscribe" />
