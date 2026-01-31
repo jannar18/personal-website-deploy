@@ -106,7 +106,7 @@ LISTITEM:I spent some time asking Claude about Claude Code versus Desktop and if
 LISTITEM:I asked Claude about what its skills are and learned that some of them are: docx, pptx, xlsx, pdf, front-end-design, product-self-knowledge, and skill-creator
 LISTITEM:I asked Claude how it learns and understands these and learned it retrieves files, reads them to remind itself/ensure it is referencing the most updated practices
 LISTITEM:I asked Claude its most valuable skills. In response it just excitedly retold me its skills again…? But it seemed to think its ability to analyze and create documents was the most important along with front-end-design because it is capable of creating polished react based websites
-LISTITEM:I determined that I should ask code to focus on the front-end-design skill
+LISTITEM:I determined that I should ask Claude to focus on the front-end-design skill
 LISTITEM:It was perfect timing because I thought I could finally use Claude Code! It turns out I couldn't yet because my macOS software was out of date… RIP
 
 TIMESTAMP:12:22
