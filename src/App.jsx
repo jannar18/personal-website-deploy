@@ -217,7 +217,7 @@ NUMBERED:2. Open the terminal and navigate to the folder (cd personal-website-de
 NUMBERED:3. Install dependencies (npm install)
 NUMBERED:4. Test it locally (npm start)
 
-Me: "I still need to finish reading but what is npm?"
+DIALOGUE:Me: "I still need to finish reading but what is npm?"
 
 TIMESTAMP:4:56
 LISTITEM:I followed all of the above deployment steps but when I ran it locally in my browser a scary red ERROR paragraph appeared :(
@@ -254,7 +254,7 @@ LISTITEM:But it said I needed to install GitHub CLI in order for the push to ori
 LISTITEM:I clicked push to origin myself
 LISTITEM:Opened my browser and there was my website, successfully published on the World Wide Web with Netlify!
 
-Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
+CLOSING:Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
     },
     {
       id: 2,
@@ -1510,7 +1510,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         while (j < lines.length &&
                                !lines[j].startsWith('TIMESTAMP:') &&
                                !lines[j].startsWith('HEADER:') &&
-                               !lines[j].startsWith('SECTION:')) {
+                               !lines[j].startsWith('SECTION:') &&
+                               !lines[j].startsWith('CLOSING:')) {
                           const itemLine = lines[j];
                           if (itemLine.trim() !== '') {
                             if (itemLine.startsWith('LISTITEM:')) {
@@ -1979,6 +1980,25 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         continue;
                       }
 
+                      // Handle CLOSING (paragraph outside of collapsible sections)
+                      if (line.startsWith('CLOSING:')) {
+                        const text = line.replace('CLOSING:', '');
+                        elements.push(
+                          <p key={i} style={{
+                            marginTop: '32px',
+                            marginBottom: '24px',
+                            fontSize: '17px',
+                            lineHeight: '1.8',
+                            color: '#5a4a3a',
+                            fontStyle: 'italic'
+                          }}>
+                            {text}
+                          </p>
+                        );
+                        i++;
+                        continue;
+                      }
+
                       // Handle Goal: lines
                       if (line.startsWith('Goal:')) {
                         elements.push(
@@ -2215,7 +2235,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
 
         {/* Footer */}
         <footer className="footer-container" style={{
-          marginTop: '120px',
+          marginTop: '60px',
           paddingTop: '40px',
           borderTop: '1px solid rgba(61,48,40,0.15)',
           fontSize: '13px',
