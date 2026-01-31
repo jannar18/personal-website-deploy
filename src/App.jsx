@@ -55,6 +55,30 @@ const App = () => {
   };
 
 
+  // Site update log
+  const siteUpdates = [
+    {
+      date: 'Jan 31',
+      description: 'Added collapsible sections to blog posts, terminal-style formatting'
+    },
+    {
+      date: 'Jan 30',
+      description: 'Published book review: Stubborn Attachments by Tyler Cowen'
+    },
+    {
+      date: 'Jan 29',
+      description: 'Added feedback forms, email subscription, improved blog styling'
+    },
+    {
+      date: 'Jan 28',
+      description: 'Published first blog post documenting the site build with Claude'
+    },
+    {
+      date: 'Jan 28',
+      description: 'Site launched! Built with React and deployed on Netlify'
+    }
+  ];
+
   // Blog post data
   const blogPosts = [
     {
@@ -689,6 +713,50 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                 </article>
               </div>
 
+              {/* Site Updates Log */}
+              <div style={{
+                marginBottom: '60px',
+                paddingTop: '40px',
+                borderTop: '1px solid rgba(205,180,155,0.3)'
+              }}>
+                <h3 style={{
+                  fontSize: '14px',
+                  letterSpacing: '0.5px',
+                  color: '#8b7355',
+                  marginBottom: '24px',
+                  fontWeight: '600',
+                  textTransform: 'uppercase'
+                }}>
+                  Recent Updates
+                </h3>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}>
+                  {siteUpdates.slice(0, 5).map((update, idx) => (
+                    <div key={idx} style={{
+                      display: 'flex',
+                      gap: '16px',
+                      alignItems: 'baseline',
+                      fontSize: '14px'
+                    }}>
+                      <span style={{
+                        color: '#bc8f8f',
+                        fontFamily: 'monospace',
+                        fontSize: '12px',
+                        minWidth: '50px'
+                      }}>
+                        {update.date}
+                      </span>
+                      <span style={{ color: '#5a4a3a' }}>
+                        {update.description}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Recent Projects */}
               <div>
                 <div style={{
@@ -847,8 +915,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     marginBottom: '28px',
                     textAlign: 'center'
                   }}>
-                    <img 
-                      src="/profile-pic.jpg" 
+                    <img
+                      src="/profile-pic.jpg"
                       alt="Julianna Roberts"
                       className="profile-image"
                       style={{
@@ -860,6 +928,15 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         boxShadow: '0 4px 12px rgba(61,48,40,0.1)'
                       }}
                     />
+                    <p style={{
+                      marginTop: '16px',
+                      fontSize: '14px',
+                      color: '#8b7355',
+                      fontStyle: 'italic',
+                      margin: '16px 0 0 0'
+                    }}>
+                      Architectural Designer & Student
+                    </p>
                   </div>
 
                   <h3 style={{
@@ -890,20 +967,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                     </li>
                   </ul>
                   
-                  <div style={{
-                    marginTop: '28px',
-                    paddingTop: '24px',
-                    borderTop: '1px solid rgba(205,180,155,0.3)'
-                  }}>
-                    <p style={{
-                      fontSize: '13px',
-                      color: '#9d8b7a',
-                      margin: 0
-                    }}>
-                      Contact: juliannaroberts18@gmail.com
-                    </p>
-                  </div>
-                </div>
+                                  </div>
               </div>
 
               {/* Resume Section */}
