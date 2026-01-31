@@ -217,7 +217,7 @@ NUMBERED:2. Open the terminal and navigate to the folder (cd personal-website-de
 NUMBERED:3. Install dependencies (npm install)
 NUMBERED:4. Test it locally (npm start)
 
-Me: "I still need to finish reading but what is npm?"
+DIALOGUE:Me: "I still need to finish reading but what is npm?"
 
 TIMESTAMP:4:56
 LISTITEM:I followed all of the above deployment steps but when I ran it locally in my browser a scary red ERROR paragraph appeared :(
@@ -254,7 +254,7 @@ LISTITEM:But it said I needed to install GitHub CLI in order for the push to ori
 LISTITEM:I clicked push to origin myself
 LISTITEM:Opened my browser and there was my website, successfully published on the World Wide Web with Netlify!
 
-Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
+CLOSING:Now I just need to have Claude check this for errors, and add in an actual page for this blog post…`
     },
     {
       id: 2,
@@ -1504,28 +1504,41 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         const timestampKey = `timestamp-${i}`;
                         const isExpanded = expandedHeaders[timestampKey];
 
-                        // Collect all list items that follow this timestamp
-                        const timestampListItems = [];
+                        // Collect ALL content until next TIMESTAMP, HEADER, or SECTION
+                        const timestampContent = [];
                         let j = i + 1;
                         while (j < lines.length &&
-                               (lines[j].startsWith('LISTITEM:') ||
-                                lines[j].startsWith('SUBITEM:') ||
-                                lines[j].startsWith('NUMBERED:') ||
-                                lines[j].startsWith('DIALOGUE:') ||
-                                lines[j].startsWith('TERMINAL:') ||
-                                lines[j].trim() === '')) {
-                          if (lines[j].trim() !== '') {
-                            const itemLine = lines[j];
+                               !lines[j].startsWith('TIMESTAMP:') &&
+                               !lines[j].startsWith('HEADER:') &&
+                               !lines[j].startsWith('SECTION:') &&
+                               !lines[j].startsWith('CLOSING:')) {
+                          const itemLine = lines[j];
+                          if (itemLine.trim() !== '') {
                             if (itemLine.startsWith('LISTITEM:')) {
-                              timestampListItems.push({ type: 'main', text: itemLine.replace('LISTITEM:', '') });
+                              timestampContent.push({ type: 'main', text: itemLine.replace('LISTITEM:', '') });
                             } else if (itemLine.startsWith('SUBITEM:')) {
-                              timestampListItems.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
+                              timestampContent.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
                             } else if (itemLine.startsWith('NUMBERED:')) {
-                              timestampListItems.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
+                              timestampContent.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
                             } else if (itemLine.startsWith('DIALOGUE:')) {
-                              timestampListItems.push({ type: 'dialogue', text: itemLine.replace('DIALOGUE:', '') });
+                              timestampContent.push({ type: 'dialogue', text: itemLine.replace('DIALOGUE:', '') });
                             } else if (itemLine.startsWith('TERMINAL:')) {
-                              timestampListItems.push({ type: 'terminal', text: itemLine.replace('TERMINAL:', '') });
+                              timestampContent.push({ type: 'terminal', text: itemLine.replace('TERMINAL:', '') });
+                            } else if (itemLine.startsWith('CODEBLOCK:')) {
+                              // Collect codeblock lines
+                              const codeLines = [itemLine.replace('CODEBLOCK:', '')];
+                              j++;
+                              while (j < lines.length && (lines[j].startsWith('├') || lines[j].startsWith('│') || lines[j].startsWith('└') || lines[j].trim().startsWith('├') || lines[j].trim().startsWith('│') || lines[j].trim().startsWith('└'))) {
+                                codeLines.push(lines[j]);
+                                j++;
+                              }
+                              timestampContent.push({ type: 'codeblock', text: codeLines.join('\n') });
+                              continue;
+                            } else if (itemLine.startsWith('Goal:')) {
+                              timestampContent.push({ type: 'goal', text: itemLine });
+                            } else {
+                              // Plain text paragraph
+                              timestampContent.push({ type: 'paragraph', text: itemLine });
                             }
                           }
                           j++;
@@ -1560,44 +1573,93 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                               </span>
                               {time}
                             </h3>
-                            {isExpanded && timestampListItems.length > 0 && (
+                            {isExpanded && timestampContent.length > 0 && (
                               <div style={{ marginBottom: '24px', paddingLeft: '20px' }}>
-                                {timestampListItems.map((item, idx) => (
-                                  item.type === 'dialogue' ? (
-                                    <p key={idx} style={{
-                                      marginBottom: '16px',
-                                      fontStyle: 'italic',
-                                      paddingLeft: '20px',
-                                      borderLeft: '2px solid rgba(188,143,143,0.4)',
-                                      color: '#5a4a3a'
-                                    }}>
-                                      {item.text}
-                                    </p>
-                                  ) : item.type === 'terminal' ? (
-                                    <div key={idx} style={{
-                                      marginBottom: '8px',
-                                      fontFamily: 'monospace',
-                                      fontSize: '14px',
-                                      color: item.text.toLowerCase().includes('error') || item.text.toLowerCase().includes('not found') ? '#dc3545' : '#28a745',
-                                      fontWeight: '600'
-                                    }}>
-                                      {item.text}
-                                    </div>
-                                  ) : (
-                                    <div key={idx} style={{
-                                      marginBottom: '8px',
-                                      paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
-                                      display: 'flex',
-                                      gap: '12px',
-                                      alignItems: 'flex-start'
-                                    }}>
-                                      {item.type !== 'numbered' && (
-                                        <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
-                                      )}
-                                      <span>{item.text}</span>
-                                    </div>
-                                  )
-                                ))}
+                                {timestampContent.map((item, idx) => {
+                                  if (item.type === 'dialogue') {
+                                    return (
+                                      <p key={idx} style={{
+                                        marginBottom: '16px',
+                                        fontStyle: 'italic',
+                                        paddingLeft: '20px',
+                                        borderLeft: '2px solid rgba(188,143,143,0.4)',
+                                        color: '#5a4a3a'
+                                      }}>
+                                        {item.text}
+                                      </p>
+                                    );
+                                  } else if (item.type === 'terminal') {
+                                    const isError = item.text.toLowerCase().includes('error') || item.text.toLowerCase().includes('not found');
+                                    return (
+                                      <code key={idx} style={{
+                                        display: 'block',
+                                        marginBottom: '12px',
+                                        fontFamily: 'monospace',
+                                        fontSize: '14px',
+                                        background: 'rgba(205,180,155,0.2)',
+                                        color: isError ? '#dc3545' : '#28a745',
+                                        padding: '8px 12px',
+                                        borderRadius: '4px',
+                                        fontWeight: '600'
+                                      }}>
+                                        {item.text}
+                                      </code>
+                                    );
+                                  } else if (item.type === 'codeblock') {
+                                    return (
+                                      <pre key={idx} style={{
+                                        marginBottom: '24px',
+                                        fontFamily: 'monospace',
+                                        fontSize: '14px',
+                                        background: 'rgba(205,180,155,0.15)',
+                                        padding: '16px',
+                                        borderRadius: '4px',
+                                        whiteSpace: 'pre',
+                                        lineHeight: '1.6',
+                                        overflowX: 'auto'
+                                      }}>
+                                        {item.text}
+                                      </pre>
+                                    );
+                                  } else if (item.type === 'goal') {
+                                    return (
+                                      <p key={idx} style={{
+                                        marginBottom: '16px',
+                                        fontSize: '17px',
+                                        fontWeight: '600',
+                                        color: '#3d3028'
+                                      }}>
+                                        {item.text}
+                                      </p>
+                                    );
+                                  } else if (item.type === 'paragraph') {
+                                    return (
+                                      <p key={idx} style={{
+                                        marginBottom: '16px',
+                                        fontSize: '17px',
+                                        lineHeight: '1.8',
+                                        color: '#5a4a3a'
+                                      }}>
+                                        {item.text}
+                                      </p>
+                                    );
+                                  } else {
+                                    return (
+                                      <div key={idx} style={{
+                                        marginBottom: '8px',
+                                        paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                        display: 'flex',
+                                        gap: '12px',
+                                        alignItems: 'flex-start'
+                                      }}>
+                                        {item.type !== 'numbered' && (
+                                          <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                        )}
+                                        <span>{item.text}</span>
+                                      </div>
+                                    );
+                                  }
+                                })}
                               </div>
                             )}
                           </div>
@@ -1900,15 +1962,38 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         const text = line.replace('TERMINAL:', '');
                         const isError = text.toLowerCase().includes('error') || text.toLowerCase().includes('not found');
                         elements.push(
-                          <div key={i} style={{
+                          <code key={i} style={{
+                            display: 'block',
                             marginBottom: '16px',
                             fontFamily: 'monospace',
                             fontSize: '14px',
+                            background: 'rgba(205,180,155,0.2)',
                             color: isError ? '#dc3545' : '#28a745',
+                            padding: '8px 12px',
+                            borderRadius: '4px',
                             fontWeight: '600'
                           }}>
                             {text}
-                          </div>
+                          </code>
+                        );
+                        i++;
+                        continue;
+                      }
+
+                      // Handle CLOSING (paragraph outside of collapsible sections)
+                      if (line.startsWith('CLOSING:')) {
+                        const text = line.replace('CLOSING:', '');
+                        elements.push(
+                          <p key={i} style={{
+                            marginTop: '32px',
+                            marginBottom: '24px',
+                            fontSize: '17px',
+                            lineHeight: '1.8',
+                            color: '#5a4a3a',
+                            fontStyle: 'italic'
+                          }}>
+                            {text}
+                          </p>
                         );
                         i++;
                         continue;
@@ -2150,7 +2235,7 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
 
         {/* Footer */}
         <footer className="footer-container" style={{
-          marginTop: '120px',
+          marginTop: '60px',
           paddingTop: '40px',
           borderTop: '1px solid rgba(61,48,40,0.15)',
           fontSize: '13px',
