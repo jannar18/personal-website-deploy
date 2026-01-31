@@ -4,6 +4,14 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeBlogPost, setActiveBlogPost] = useState(null);
   const [subscribeStatus, setSubscribeStatus] = useState('');
+  const [expandedHeaders, setExpandedHeaders] = useState({});
+
+  const toggleHeader = (headerKey) => {
+    setExpandedHeaders(prev => ({
+      ...prev,
+      [headerKey]: !prev[headerKey]
+    }));
+  };
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -1535,22 +1543,81 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                         continue;
                       }
 
-                      // Handle HEADER (subsection headers)
+                      // Handle HEADER (collapsible subsection headers)
                       if (line.startsWith('HEADER:')) {
                         const title = line.replace('HEADER:', '');
+                        const headerKey = `header-${i}`;
+                        const isExpanded = expandedHeaders[headerKey];
+
+                        // Collect all list items that follow this header
+                        const headerListItems = [];
+                        let j = i + 1;
+                        while (j < lines.length &&
+                               (lines[j].startsWith('LISTITEM:') ||
+                                lines[j].startsWith('SUBITEM:') ||
+                                lines[j].startsWith('NUMBERED:') ||
+                                lines[j].trim() === '')) {
+                          if (lines[j].trim() !== '') {
+                            const itemLine = lines[j];
+                            if (itemLine.startsWith('LISTITEM:')) {
+                              headerListItems.push({ type: 'main', text: itemLine.replace('LISTITEM:', '') });
+                            } else if (itemLine.startsWith('SUBITEM:')) {
+                              headerListItems.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
+                            } else if (itemLine.startsWith('NUMBERED:')) {
+                              headerListItems.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
+                            }
+                          }
+                          j++;
+                        }
+
                         elements.push(
-                          <h3 key={i} style={{
-                            marginTop: '36px',
-                            marginBottom: '16px',
-                            fontSize: '18px',
-                            fontWeight: '600',
-                            color: '#8b7355',
-                            letterSpacing: '0.5px'
-                          }}>
-                            {title}
-                          </h3>
+                          <div key={headerKey} style={{ marginTop: '24px' }}>
+                            <h3
+                              onClick={() => toggleHeader(headerKey)}
+                              style={{
+                                marginBottom: isExpanded ? '16px' : '0',
+                                fontSize: '18px',
+                                fontWeight: '600',
+                                color: '#8b7355',
+                                letterSpacing: '0.5px',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                userSelect: 'none'
+                              }}
+                            >
+                              <span style={{
+                                fontSize: '12px',
+                                transition: 'transform 0.2s ease',
+                                transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                                display: 'inline-block'
+                              }}>
+                                ▶
+                              </span>
+                              {title}
+                            </h3>
+                            {isExpanded && headerListItems.length > 0 && (
+                              <div style={{ marginBottom: '24px', paddingLeft: '20px' }}>
+                                {headerListItems.map((item, idx) => (
+                                  <div key={idx} style={{
+                                    marginBottom: '8px',
+                                    paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                    display: 'flex',
+                                    gap: '12px',
+                                    alignItems: 'flex-start'
+                                  }}>
+                                    {item.type !== 'numbered' && (
+                                      <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                    )}
+                                    <span>{item.text}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         );
-                        i++;
+                        i = j;
                         continue;
                       }
 
