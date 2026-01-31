@@ -238,10 +238,10 @@ LISTITEM:I successfully published to GitHub and asked Claude if it had any abili
 
 TIMESTAMP:6:10
 LISTITEM:I published to Netlify
-LISTITEM:ERROR
+TERMINAL:ERROR
 LISTITEM:Claude had put an invalid href
 LISTITEM:Updated the App.jsx
-LISTITEM:ERROR
+TERMINAL:ERROR
 
 TIMESTAMP:6:15
 LISTITEM:I was reminded around this time to check the model of Claude I was using. My Claude Code was set to Opus 4.5 - good. Claude Desktop however was set to Sonnet 4.5 instead of Opus 4.5 :'(
@@ -1511,6 +1511,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                                (lines[j].startsWith('LISTITEM:') ||
                                 lines[j].startsWith('SUBITEM:') ||
                                 lines[j].startsWith('NUMBERED:') ||
+                                lines[j].startsWith('DIALOGUE:') ||
+                                lines[j].startsWith('TERMINAL:') ||
                                 lines[j].trim() === '')) {
                           if (lines[j].trim() !== '') {
                             const itemLine = lines[j];
@@ -1520,6 +1522,10 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                               timestampListItems.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
                             } else if (itemLine.startsWith('NUMBERED:')) {
                               timestampListItems.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
+                            } else if (itemLine.startsWith('DIALOGUE:')) {
+                              timestampListItems.push({ type: 'dialogue', text: itemLine.replace('DIALOGUE:', '') });
+                            } else if (itemLine.startsWith('TERMINAL:')) {
+                              timestampListItems.push({ type: 'terminal', text: itemLine.replace('TERMINAL:', '') });
                             }
                           }
                           j++;
@@ -1557,18 +1563,40 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                             {isExpanded && timestampListItems.length > 0 && (
                               <div style={{ marginBottom: '24px', paddingLeft: '20px' }}>
                                 {timestampListItems.map((item, idx) => (
-                                  <div key={idx} style={{
-                                    marginBottom: '8px',
-                                    paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
-                                    display: 'flex',
-                                    gap: '12px',
-                                    alignItems: 'flex-start'
-                                  }}>
-                                    {item.type !== 'numbered' && (
-                                      <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
-                                    )}
-                                    <span>{item.text}</span>
-                                  </div>
+                                  item.type === 'dialogue' ? (
+                                    <p key={idx} style={{
+                                      marginBottom: '16px',
+                                      fontStyle: 'italic',
+                                      paddingLeft: '20px',
+                                      borderLeft: '2px solid rgba(188,143,143,0.4)',
+                                      color: '#5a4a3a'
+                                    }}>
+                                      {item.text}
+                                    </p>
+                                  ) : item.type === 'terminal' ? (
+                                    <div key={idx} style={{
+                                      marginBottom: '8px',
+                                      fontFamily: 'monospace',
+                                      fontSize: '14px',
+                                      color: item.text.toLowerCase().includes('error') || item.text.toLowerCase().includes('not found') ? '#dc3545' : '#28a745',
+                                      fontWeight: '600'
+                                    }}>
+                                      {item.text}
+                                    </div>
+                                  ) : (
+                                    <div key={idx} style={{
+                                      marginBottom: '8px',
+                                      paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                      display: 'flex',
+                                      gap: '12px',
+                                      alignItems: 'flex-start'
+                                    }}>
+                                      {item.type !== 'numbered' && (
+                                        <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                      )}
+                                      <span>{item.text}</span>
+                                    </div>
+                                  )
                                 ))}
                               </div>
                             )}
@@ -1635,6 +1663,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                                (lines[j].startsWith('LISTITEM:') ||
                                 lines[j].startsWith('SUBITEM:') ||
                                 lines[j].startsWith('NUMBERED:') ||
+                                lines[j].startsWith('DIALOGUE:') ||
+                                lines[j].startsWith('TERMINAL:') ||
                                 lines[j].trim() === '')) {
                           if (lines[j].trim() !== '') {
                             const itemLine = lines[j];
@@ -1644,6 +1674,10 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                               headerListItems.push({ type: 'sub', text: itemLine.replace('SUBITEM:', '') });
                             } else if (itemLine.startsWith('NUMBERED:')) {
                               headerListItems.push({ type: 'numbered', text: itemLine.replace('NUMBERED:', '') });
+                            } else if (itemLine.startsWith('DIALOGUE:')) {
+                              headerListItems.push({ type: 'dialogue', text: itemLine.replace('DIALOGUE:', '') });
+                            } else if (itemLine.startsWith('TERMINAL:')) {
+                              headerListItems.push({ type: 'terminal', text: itemLine.replace('TERMINAL:', '') });
                             }
                           }
                           j++;
@@ -1679,18 +1713,40 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                             {isExpanded && headerListItems.length > 0 && (
                               <div style={{ marginBottom: '24px', paddingLeft: '20px' }}>
                                 {headerListItems.map((item, idx) => (
-                                  <div key={idx} style={{
-                                    marginBottom: '8px',
-                                    paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
-                                    display: 'flex',
-                                    gap: '12px',
-                                    alignItems: 'flex-start'
-                                  }}>
-                                    {item.type !== 'numbered' && (
-                                      <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
-                                    )}
-                                    <span>{item.text}</span>
-                                  </div>
+                                  item.type === 'dialogue' ? (
+                                    <p key={idx} style={{
+                                      marginBottom: '16px',
+                                      fontStyle: 'italic',
+                                      paddingLeft: '20px',
+                                      borderLeft: '2px solid rgba(188,143,143,0.4)',
+                                      color: '#5a4a3a'
+                                    }}>
+                                      {item.text}
+                                    </p>
+                                  ) : item.type === 'terminal' ? (
+                                    <div key={idx} style={{
+                                      marginBottom: '8px',
+                                      fontFamily: 'monospace',
+                                      fontSize: '14px',
+                                      color: item.text.toLowerCase().includes('error') || item.text.toLowerCase().includes('not found') ? '#dc3545' : '#28a745',
+                                      fontWeight: '600'
+                                    }}>
+                                      {item.text}
+                                    </div>
+                                  ) : (
+                                    <div key={idx} style={{
+                                      marginBottom: '8px',
+                                      paddingLeft: item.type === 'sub' ? '28px' : item.type === 'numbered' ? '20px' : '0',
+                                      display: 'flex',
+                                      gap: '12px',
+                                      alignItems: 'flex-start'
+                                    }}>
+                                      {item.type !== 'numbered' && (
+                                        <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
+                                      )}
+                                      <span>{item.text}</span>
+                                    </div>
+                                  )
                                 ))}
                               </div>
                             )}
@@ -1842,16 +1898,14 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
                       // Handle TERMINAL (terminal-style output)
                       if (line.startsWith('TERMINAL:')) {
                         const text = line.replace('TERMINAL:', '');
+                        const isError = text.toLowerCase().includes('error') || text.toLowerCase().includes('not found');
                         elements.push(
                           <div key={i} style={{
                             marginBottom: '16px',
                             fontFamily: 'monospace',
                             fontSize: '14px',
-                            background: '#2d2d2d',
-                            color: text.toLowerCase().includes('error') || text.toLowerCase().includes('not found') ? '#ff6b6b' : '#98c379',
-                            padding: '12px 16px',
-                            borderRadius: '4px',
-                            display: 'inline-block'
+                            color: isError ? '#dc3545' : '#28a745',
+                            fontWeight: '600'
                           }}>
                             {text}
                           </div>
