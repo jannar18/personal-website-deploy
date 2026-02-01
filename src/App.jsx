@@ -371,6 +371,104 @@ The point of his discussion wasn't to pick which one of these models is better (
 QUOTE:New ideas are the product of human reason; it was Aristotle who defined man as the rational animal. A preoccupation with pursuing growth—or some modified version of the growth ideal—therefore means a preoccupation with ideas, a preoccupation with cultivating human reason, and a preoccupation with the notion that man should realize, perfect, and extend his nature as a generator of powerful ideas that can change the world.
 
 We live in a world of Crusonia plants. Cowen's ability to use such a strong idea to explain his arguments, in a book that arguably concludes with this message, has definitely caused me to be biased towards trusting the rest of his ideas.`
+    },
+    {
+      id: 3,
+      date: 'January 31, 2025',
+      title: 'Blog #3: I Failed My Assignment - The Elements of Style by William Strunk Jr. and E.B. White',
+      excerpt: 'Called to romanticize a cozy and snow-filled Saturday in Brooklyn, I failed today\'s assignment. I was meant to consume William Strunk Jr. and E.B. White\'s Elements of Style and skim Joseph M. Williams and Gregory G. Colomb\'s Style: Lessons in Clarity and Grace, but I wanted conversation, daydreams and daily rituals; I indulged.',
+      tags: ['Book Review', 'Writing'],
+      content: `Swept up by a call to romanticize a cozy, snow-filled Saturday in Brooklyn, I failed today's assignment. I was meant to consume the entirety of William Strunk Jr. and E.B. White's Elements of Style and skim Joseph M. Williams and Gregory G. Colomb's Style: Lessons in Clarity and Grace, but found myself in want of conversation, daydreams and daily rituals; I indulged. A borrowed room came to be my sacred home, as the moon's portrait hung illuminatingly in my window frame.
+
+SEPARATOR:
+
+SECTION:Does This Paragraph Follow The Rules?
+
+DIALOGUE:Me: Does the above paragraph follow the rules I mentioned from the book? Point out where I failed and succeeded.
+
+DIALOGUE:Claude: Great exercise - testing your own writing against the book you're reading. Let me break it down:
+
+HEADER:Successes
+LISTITEM:"I failed today's assignment" — Direct. Active voice. Clear subject-verb.
+LISTITEM:"I indulged." — Punchy. Strunk would approve. Omits needless words.
+LISTITEM:Concrete imagery: "snow-filled Saturday in Brooklyn," "moon's portrait," "window frame" — Specific, not vague.
+
+HEADER:Where Strunk & White Might Push Back
+LISTITEM:"illuminatingly" — Adverbs are suspect in their world. "Write with nouns and verbs, not adjectives and adverbs." Could the moon simply "illuminate" or "glow"? Or cut it: "the moon's portrait hung in my window frame."
+LISTITEM:"came to be" — Ironic since you asked for synonyms for "became." Strunk would say: just use "became." Fewer words.
+LISTITEM:"found myself in want of" — Elegant but wordy. "I wanted conversation" is half the words.
+LISTITEM:"Swept up by a call to romanticize" — Passive-ish construction. Who's calling? Could be tightened: "Called to romanticize..." or "Romanticizing a cozy, snow-filled Saturday..."
+LISTITEM:"the entirety of" — Could just be "all of" or omitted entirely.
+
+This tension itself could be the blog post — you failing to follow the rules in a post about failing to finish the book about rules.
+
+SEPARATOR:
+
+SECTION:The Edited Paragraph
+
+Called to romanticize a cozy and snow-filled Saturday in Brooklyn, I failed today's assignment. I was meant to consume William Strunk Jr. and E.B. White's Elements of Style and skim Joseph M. Williams and Gregory G. Colomb's Style: Lessons in Clarity and Grace, but I wanted conversation, daydreams and daily rituals; I indulged. A borrowed room became my sacred home, as the moon's portrait hung, illuminating, in my window frame.
+
+HEADER:Changes Made
+LISTITEM:"Swept up by a call" → "Called" — tighter, more active
+LISTITEM:"the entirety of" → cut — omitted needless words
+LISTITEM:"found myself in want of" → "I wanted" — direct
+LISTITEM:"came to be" → "became" — simpler
+LISTITEM:"illuminatingly" → "illuminating" — participle set off by commas works better than the adverb
+
+SEPARATOR:
+
+SECTION:But Wait — Claude Never Received My Notes
+
+NOTE:Here's the twist: Claude assumed rules about the book from other sources, not my own notes, because Claude never received my notes due to a message send error. After I resent my notes, here are Claude's critiques about my paragraph based on the actual rules I had written down:
+
+HEADER:Section 1 (Punctuation Rules)
+LISTITEM:Enclose parenthetic expressions between commas — ✓ "cozy, snow-filled Saturday" correctly uses commas
+LISTITEM:Place comma before conjunction introducing independent clause — ✓ "...Grace, but found myself..." — comma before "but" is correct
+LISTITEM:Do not join independent clauses with a comma — ✓ I use a semicolon correctly: "rituals; I indulged"
+LISTITEM:Do not break sentences in two — ✓ No sentence fragments
+
+HEADER:Section 2 (Composition Rules)
+LISTITEM:Use the active voice — ✗ "Swept up by a call" is passive. Who calls?
+LISTITEM:Use the positive form — ✓ No weak "not" constructions
+LISTITEM:Use definite, specific, concrete language — ✓ "snow-filled Saturday in Brooklyn," "moon's portrait," "window frame" — vivid
+LISTITEM:Keep related words together — ✓ Generally well-structured
+LISTITEM:Place what is most prominent at the end — ✓ "in my window frame" ends with the image
+
+HEADER:Section 4 (Words to Eliminate)
+LISTITEM:Avoid listed words — ✓ None of the forbidden words appear
+
+HEADER:Summary
+LISTITEM:Successes: Strong punctuation, concrete imagery, positive form, prominent ending
+LISTITEM:Failure: Passive voice in opening ("Swept up by a call")
+
+SEPARATOR:
+
+SECTION:The Final Paragraph
+
+Called to romanticize a cozy, snow-filled Saturday in Brooklyn, I failed today's assignment. I was meant to consume the entirety of William Strunk Jr. and E.B. White's Elements of Style and skim Joseph M. Williams and Gregory G. Colomb's Style: Lessons in Clarity and Grace, but found myself in want of conversation, daydreams and daily rituals; I indulged. A borrowed room came to be my sacred home, as the moon's portrait hung illuminatingly in my window frame.
+
+SEPARATOR:
+
+HEADER:My Notes
+LISTITEM:Rules 3, 4, 5 and 6 cover the most important principles that govern punctuation: enclose parenthetic expressions between commas, place a comma before a conjunction introducing an independent clause, do not join independent clauses with a comma, do not break sentences in two.
+LISTITEM:Why are 3, 4, 5 + 6 the most important principles?
+LISTITEM:What is the grammatical subject vs. the subject?
+LISTITEM:In order to understand whether a sentence is right or wrong, it is crucial to break sentences down into their parts. I have a weak habit of practicing this.
+LISTITEM:What does Elementary Rules of Usage mean?
+LISTITEM:Effective writing calls for a scheme of procedure; the first principle of composition is to determine the shape of what is to come and pursue that shape.
+LISTITEM:The paragraph is a convenient unit and a good visual help.
+LISTITEM:Use the active voice.
+LISTITEM:Use the positive form. "Not" is weak. The reader wishes to be told what is.
+LISTITEM:Be assertive; save the auxiliaries.
+LISTITEM:Use definite, specific, concrete language: "He grinned as he pocketed the coin."
+LISTITEM:Use specific language; call up pictures with your words.
+LISTITEM:Omit "the fact that," "who is," and "which was" from your writing vocabulary.
+LISTITEM:Keep related words together. "There was a stir in the audience that suggested disapproval" vs. "A stir that suggested disapproval swept the audience." "She only found two mistakes" vs. "She found only two mistakes."
+LISTITEM:After the initial notification, waste no words in repeating the notification of an author/speaker.
+LISTITEM:Place what is to be made most prominent, word, sentence or paragraph, at the end.
+LISTITEM:Quotations are more complex than I've practiced in my writing.
+LISTITEM:There are many words and phrases to eliminate from my use: and/or, anticipate, case, character, currently, each and every one, facility, factor, feature, "he is a man who," importantly, in terms of, meaningful, "one of the most," personally, respective, respectively, secondly, thirdly etc., "the truth is," utilize, while.
+LISTITEM:"Get" is complex. Be careful of "would."`
     }
   ];
 
