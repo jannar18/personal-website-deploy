@@ -1759,7 +1759,7 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                                         {item.type !== 'numbered' && (
                                           <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
                                         )}
-                                        <span>{item.text}</span>
+                                        <span style={{ color: '#6a5a4a', fontSize: '0.95em' }}>{item.text}</span>
                                       </div>
                                     );
                                   }
@@ -1910,7 +1910,7 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                                       {item.type !== 'numbered' && (
                                         <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
                                       )}
-                                      <span>{item.text}</span>
+                                      <span style={{ color: '#6a5a4a', fontSize: '0.95em' }}>{item.text}</span>
                                     </div>
                                   )
                                 ))}
@@ -1990,7 +1990,7 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                                 {item.type !== 'numbered' && (
                                   <span style={{ color: '#bc8f8f', flexShrink: 0 }}>–</span>
                                 )}
-                                <span>{item.text}</span>
+                                <span style={{ color: '#6a5a4a', fontSize: '0.95em' }}>{item.text}</span>
                               </div>
                             ))}
                           </div>
