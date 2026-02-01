@@ -447,7 +447,7 @@ Called to romanticize a cozy, snow-filled Saturday in Brooklyn, I failed today's
 
 SEPARATOR:
 
-HEADER:My Notes
+My Notes:
 
 HEADER:Section 1: Elementary Rules of Usage
 LISTITEM:Rules 3, 4, 5 and 6 cover the most important principles that govern punctuation: enclose parenthetic expressions between commas, place a comma before a conjunction introducing an independent clause, do not join independent clauses with a comma, do not break sentences in two.
