@@ -415,7 +415,7 @@ SEPARATOR:
 
 But Wait — Claude Never Received My Notes
 
-NOTE:Claude assumed rules about the book from other sources, not my own notes, because Claude never received my notes due to a message send error. After I resent my notes, here are Claude's critiques about my paragraph based on the actual rules I had written down:
+NOTE:Claude must have assumed rules about the book from other sources, not my own notes, because a message send error prevented them from coming through. Here are Claude's critiques of my paragraph based on the notes I sent:
 
 Section 1 (Punctuation Rules):
 LISTITEM:Enclose parenthetic expressions between commas — ✓ "cozy, snow-filled Saturday" correctly uses commas
