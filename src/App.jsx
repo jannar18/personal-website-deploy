@@ -382,6 +382,8 @@ We live in a world of Crusonia plants. Cowen's ability to use such a strong idea
 
 SEPARATOR:
 
+I decided to experiment:
+
 DIALOGUE:Me: Does the above paragraph follow the rules I mentioned from the book? Point out where I failed and succeeded.
 
 DIALOGUE:Claude: Great exercise - testing your own writing against the book you're reading. Let me break it down:
