@@ -417,20 +417,20 @@ But Wait — Claude Never Received My Notes
 
 NOTE:Claude must have assumed rules about the book from other sources, not my own notes, because a message send error prevented them from coming through. Here are Claude's critiques of my paragraph based on the notes I sent:
 
-Section 1 (Punctuation Rules):
+Section 1:
 LISTITEM:Enclose parenthetic expressions between commas — ✓ "cozy, snow-filled Saturday" correctly uses commas
 LISTITEM:Place comma before conjunction introducing independent clause — ✓ "...Grace, but found myself..." — comma before "but" is correct
 LISTITEM:Do not join independent clauses with a comma — ✓ I use a semicolon correctly: "rituals; I indulged"
 LISTITEM:Do not break sentences in two — ✓ No sentence fragments
 
-Section 2 (Composition Rules):
+Section 2:
 LISTITEM:Use the active voice — ✗ "Swept up by a call" is passive. Who calls?
 LISTITEM:Use the positive form — ✓ No weak "not" constructions
 LISTITEM:Use definite, specific, concrete language — ✓ "snow-filled Saturday in Brooklyn," "borrowed room," "sacred home," "portrait of the illuminating moon" — vivid
 LISTITEM:Keep related words together — ✓ Generally well-structured
 LISTITEM:Place what is most prominent at the end — ✓ "portrait of the illuminating moon" ends with strong imagery
 
-Section 4 (Words to Eliminate):
+Section 4:
 LISTITEM:Avoid listed words — ✓ None of the forbidden words appear
 
 Summary:
