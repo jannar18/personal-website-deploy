@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Pre-push hook: Runs npm build before allowing push
+# If build fails, push is blocked
+
+echo "Running build check before push..."
+npm run build
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "Build failed! Push blocked."
+  echo "Fix the build errors and try again."
+  exit 1
+fi
+
+echo "Build passed. Pushing..."

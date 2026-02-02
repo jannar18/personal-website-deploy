@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "setup-hooks": "cp scripts/pre-push .git/hooks/pre-push && echo 'Git hooks installed!'"
   },
   "eslintConfig": {
     "extends": [
