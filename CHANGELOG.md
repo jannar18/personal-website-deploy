@@ -10,32 +10,81 @@ A running log of development sessions for Julianna Roberts' personal website.
 
 ### Goals
 **Workflow & Automation**
-- [ ] Identify issues and improve workflow with Claude
-- [ ] Automate more workflow (e.g., PR deployment - currently manual)
-- [ ] Establish local testing/building workflow
+- [x] Identify issues and improve workflow with Claude
+- [x] Automate more workflow (e.g., PR deployment - currently manual)
+- [x] Establish local testing/building workflow
 
 **Risk Assessment**
-- [ ] Identify risks with using Claude
-- [ ] Identify how to manage Claude risks
+- [x] Identify risks with using Claude
+- [x] Identify how to manage Claude risks
 
 **Site Planning & Design**
-- [ ] Identify and refine site goals
+- [x] Identify and refine site goals
 - [ ] Change site design based on new goals
 - [ ] Change the site name
 
 **Features**
 - [ ] Create a domain
-- [ ] Add daily log feature to website (draw from changelog notes)
+- [x] Add daily log feature to website (draw from changelog notes) - in progress
 
 ### Changes
-- Added: `CHANGELOG.md` for session tracking
+- Added: `CHANGELOG.md` workflow (lives on main, updated each session)
+- Added: PR template at `.github/PULL_REQUEST_TEMPLATE.md`
+- Added: Global pre-push hook at `~/.git-hooks/pre-push` (runs `npm run build` before every push)
+- Added: Per-project pre-push hook at `scripts/pre-push`
+- Added: `npm run setup-hooks` command in package.json
+- Added: First-time setup section in README.md
+- Added: GitHub CLI authentication (`gh auth login`, `gh auth setup-git`)
+- Added: "Today's Log" section on homepage with window-style container
+- Merged: PR #20 - workflow automation changes
 
-### Notes
-- Reviewed all previous sessions to identify workflow improvements
-- Established structured session flow: Review → Plan → Build → Test → Handoff
+### Workflow Analysis
+Analyzed all 19 PRs from Sessions 1-3. Found issues:
+- PRs #10, #11 failed deploy previews (no local testing before push)
+- PRs #2, #3, #6, #7 had poor titles (just branch names, no descriptions)
+- Same branch reused for unrelated features
+- 8 PRs needed for subscribe form fix (should have diagnosed first)
+
+### New Workflow Established
+1. Work on code together
+2. Preview locally (`npm start`)
+3. User says "I'm ready, go"
+4. Claude runs: `git push` → `gh pr create` → `gh pr merge --auto --squash`
+5. Netlify checks run → auto-merge if passing → deploy
+
+### Risk Assessment
+**What Claude can access:**
+- Read/write/delete files (with prompts)
+- Run terminal commands
+- Push to GitHub
+- Files outside git not protected by version history
+
+**Current safeguards:**
+- User sees prompts before file edits
+- Git history allows undo
+- Pre-push hook catches build failures
+- Work on branches, not directly on main
+
+### Concepts Explained This Session
+- npm (Node Package Manager)
+- repo (repository)
+- commit vs push
+- git hooks (pre-push, pre-commit)
+- git checkout (switching branches)
+- package.json scripts
+- eslintConfig
+- PR templates
+- Auto-merge
+
+### Site Vision
+User wants the site to be an active visual of daily work, thoughts, and projections. Adding "Today's Log" feature that displays session notes in a window-style container on the homepage.
 
 ### Next Session
-- _TBD_
+- Finish "Today's Log" and "Archive" sections on homepage
+- Add portfolio to projects page
+- Add resume PDF
+- Change site name
+- Create domain
 
 ---
 
