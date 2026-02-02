@@ -9,9 +9,23 @@ A running log of development sessions for Julianna Roberts' personal website.
 **Focus:** Workflow improvements and documentation
 
 ### Goals
-- [ ] Create session documentation system (this file)
-- [ ] Review and improve workflow processes
-- [ ] _additional goals TBD_
+**Workflow & Automation**
+- [ ] Identify issues and improve workflow with Claude
+- [ ] Automate more workflow (e.g., PR deployment - currently manual)
+- [ ] Establish local testing/building workflow
+
+**Risk Assessment**
+- [ ] Identify risks with using Claude
+- [ ] Identify how to manage Claude risks
+
+**Site Planning & Design**
+- [ ] Identify and refine site goals
+- [ ] Change site design based on new goals
+- [ ] Change the site name
+
+**Features**
+- [ ] Create a domain
+- [ ] Add daily log feature to website (draw from changelog notes)
 
 ### Changes
 - Added: `CHANGELOG.md` for session tracking
