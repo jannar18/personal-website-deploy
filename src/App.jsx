@@ -668,6 +668,140 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                 </p>
               </div>
 
+              {/* Today's Log */}
+              <div style={{
+                marginBottom: '60px',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                border: '1px solid rgba(139,115,85,0.25)',
+                boxShadow: '0 2px 8px rgba(61,48,40,0.06)'
+              }}>
+                <style>
+                  {`
+                    @keyframes blink {
+                      0%, 50% { opacity: 1; }
+                      51%, 100% { opacity: 0; }
+                    }
+                  `}
+                </style>
+                {/* Window Title Bar */}
+                <div style={{
+                  background: 'rgba(139,115,85,0.12)',
+                  padding: '10px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderBottom: '1px solid rgba(139,115,85,0.15)'
+                }}>
+                  {/* Window Controls - muted/abstracted */}
+                  <div style={{ display: 'flex', gap: '5px' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(188,143,143,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(205,180,155,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(139,115,85,0.4)' }}></div>
+                  </div>
+                  {/* Window Title */}
+                  <span style={{
+                    color: '#8b7355',
+                    fontSize: '12px',
+                    fontFamily: '"SF Mono", "Fira Code", monospace',
+                    marginLeft: '10px'
+                  }}>
+                    CHANGELOG.md
+                  </span>
+                </div>
+                {/* Window Content */}
+                <div style={{
+                  padding: '24px 28px',
+                  background: 'rgba(255,255,255,0.4)',
+                  fontFamily: '"SF Mono", "Fira Code", monospace',
+                  color: '#3d3028',
+                  fontSize: '13px',
+                  lineHeight: '1.9'
+                }}>
+                  <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Session 4:</span> February 2, 2025</p>
+                  <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/review-improve-workflow-5qnhW</p>
+                  <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Workflow improvements and documentation</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added pre-push hook for build checks</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Automated PR workflow with auto-merge</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Established CHANGELOG workflow for session continuity</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Analyzed risks of using Claude<span style={{
+                    display: 'inline-block',
+                    width: '7px',
+                    height: '14px',
+                    background: '#8b7355',
+                    marginLeft: '4px',
+                    verticalAlign: 'middle',
+                    animation: 'blink 1s infinite'
+                  }}></span></p>
+                </div>
+              </div>
+
+              {/* Archive */}
+              <div style={{ marginBottom: '60px' }}>
+                <h3 style={{
+                  fontSize: '14px',
+                  letterSpacing: '0.5px',
+                  color: '#8b7355',
+                  marginBottom: '24px',
+                  fontWeight: '600',
+                  textTransform: 'uppercase'
+                }}>
+                  Archive
+                </h3>
+
+                {/* Session 4 Archive Entry */}
+                <div style={{
+                  marginBottom: '20px',
+                  borderRadius: '6px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(139,115,85,0.25)',
+                  boxShadow: '0 2px 8px rgba(61,48,40,0.06)'
+                }}>
+                  {/* Window Title Bar */}
+                  <div style={{
+                    background: 'rgba(139,115,85,0.12)',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    borderBottom: '1px solid rgba(139,115,85,0.15)'
+                  }}>
+                    <div style={{ display: 'flex', gap: '5px' }}>
+                      <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(188,143,143,0.5)' }}></div>
+                      <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(205,180,155,0.5)' }}></div>
+                      <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(139,115,85,0.4)' }}></div>
+                    </div>
+                    <span style={{
+                      color: '#8b7355',
+                      fontSize: '12px',
+                      fontFamily: '"SF Mono", "Fira Code", monospace',
+                      marginLeft: '10px'
+                    }}>
+                      Session 4 — February 2, 2025
+                    </span>
+                  </div>
+                  {/* Window Content */}
+                  <div style={{
+                    padding: '24px 28px',
+                    background: 'rgba(255,255,255,0.4)',
+                    fontFamily: '"SF Mono", "Fira Code", monospace',
+                    color: '#3d3028',
+                    fontSize: '13px',
+                    lineHeight: '1.9'
+                  }}>
+                    <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/review-improve-workflow-5qnhW</p>
+                    <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Workflow improvements and documentation</p>
+                    <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
+                    <p style={{ margin: '0 0 4px 0' }}>- Added pre-push hook for build checks</p>
+                    <p style={{ margin: '0 0 4px 0' }}>- Automated PR workflow with auto-merge</p>
+                    <p style={{ margin: '0 0 4px 0' }}>- Established CHANGELOG workflow for session continuity</p>
+                    <p style={{ margin: '0 0 4px 0' }}>- Analyzed risks of using Claude</p>
+                    <p style={{ margin: '0 0 4px 0' }}>- Started "Today's Log" homepage feature</p>
+                  </div>
+                </div>
+              </div>
+
               {/* Featured Blog Post */}
               <div style={{
                 marginBottom: '60px'
