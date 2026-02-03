@@ -3,9 +3,22 @@ import React, { useState } from 'react';
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeBlogPost, setActiveBlogPost] = useState(null);
+  const [activeProject, setActiveProject] = useState(null);
   const [subscribeStatus, setSubscribeStatus] = useState('');
   const [expandedHeaders, setExpandedHeaders] = useState({});
   const [feedbackStatus, setFeedbackStatus] = useState('');
+
+  // Projects data
+  const projects = [
+    {
+      id: 1,
+      type: 'Portfolio',
+      title: 'Selected Works 2025',
+      description: 'Architectural design portfolio showcasing selected projects and work.',
+      date: 'January 2025',
+      pdfUrl: '/portfolio.pdf'
+    }
+  ];
 
   const toggleHeader = (headerKey) => {
     setExpandedHeaders(prev => ({
@@ -707,7 +720,11 @@ All of this is live on the site now, automatically deployed via our new workflow
               {['home', 'about', 'writing', 'projects', 'archive'].map(section => (
                 <button
                   key={section}
-                  onClick={() => setActiveSection(section)}
+                  onClick={() => {
+                    setActiveSection(section);
+                    setActiveBlogPost(null);
+                    setActiveProject(null);
+                  }}
                   style={{
                     background: 'none',
                     border: 'none',
@@ -1094,6 +1111,10 @@ All of this is live on the site now, automatically deployed via our new workflow
                   gap: '24px'
                 }}>
                   <div
+                    onClick={() => {
+                      setActiveSection('projects');
+                      setActiveProject(projects[0]);
+                    }}
                     style={{
                       padding: '28px',
                       background: 'rgba(255,255,255,0.4)',
@@ -1118,9 +1139,9 @@ All of this is live on the site now, automatically deployed via our new workflow
                       letterSpacing: '1px',
                       textTransform: 'uppercase'
                     }}>
-                      Artifact Type
+                      Portfolio
                     </div>
-                    
+
                     <h4 style={{
                       fontSize: '19px',
                       fontWeight: '400',
@@ -1128,25 +1149,25 @@ All of this is live on the site now, automatically deployed via our new workflow
                       color: '#3d3028',
                       fontFamily: '"Cormorant Garamond", serif'
                     }}>
-                      Title
+                      Selected Works 2025
                     </h4>
-                    
+
                     <p style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
                       color: '#5a4a3a',
                       marginBottom: '12px'
                     }}>
-                      Summary
+                      Architectural design portfolio showcasing selected projects and work.
                     </p>
-                    
+
                     <div style={{
                       fontSize: '12px',
                       color: '#9d8b7a',
                       borderTop: '1px solid rgba(205,180,155,0.2)',
                       paddingTop: '10px'
                     }}>
-                      Date
+                      PDF · 2025
                     </div>
                   </div>
                 </div>
@@ -2503,7 +2524,7 @@ All of this is live on the site now, automatically deployed via our new workflow
           )}
 
           {/* Projects section */}
-          {activeSection === 'projects' && (
+          {activeSection === 'projects' && !activeProject && (
             <section style={{
               animation: 'fadeIn 0.6s ease'
             }}>
@@ -2516,72 +2537,76 @@ All of this is live on the site now, automatically deployed via our new workflow
               }}>
                 Projects & Artifacts
               </h2>
-              
+
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                 gap: '28px'
               }}>
-                <div
-                  style={{
-                    padding: '32px',
-                    background: 'rgba(255,255,255,0.4)',
-                    border: '1px solid rgba(205,180,155,0.3)',
-                    borderRadius: '2px',
-                    transition: 'all 0.4s ease',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(61,48,40,0.08)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div style={{
-                    fontSize: '11px',
-                    color: '#bc8f8f',
-                    marginBottom: '16px',
-                    letterSpacing: '1px',
-                    textTransform: 'uppercase'
-                  }}>
-                    Artifact Type
+                {projects.map(project => (
+                  <div
+                    key={project.id}
+                    onClick={() => setActiveProject(project)}
+                    style={{
+                      padding: '32px',
+                      background: 'rgba(255,255,255,0.4)',
+                      border: '1px solid rgba(205,180,155,0.3)',
+                      borderRadius: '2px',
+                      transition: 'all 0.4s ease',
+                      cursor: 'pointer',
+                      position: 'relative'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.boxShadow = '0 8px 24px rgba(61,48,40,0.08)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <div style={{
+                      fontSize: '11px',
+                      color: '#bc8f8f',
+                      marginBottom: '16px',
+                      letterSpacing: '1px',
+                      textTransform: 'uppercase'
+                    }}>
+                      {project.type}
+                    </div>
+
+                    <h3 style={{
+                      fontSize: '21px',
+                      fontWeight: '400',
+                      marginBottom: '12px',
+                      color: '#3d3028',
+                      fontFamily: '"Cormorant Garamond", serif'
+                    }}>
+                      {project.title}
+                    </h3>
+
+                    <p style={{
+                      fontSize: '15px',
+                      lineHeight: '1.7',
+                      color: '#5a4a3a',
+                      marginBottom: '16px'
+                    }}>
+                      {project.description}
+                    </p>
+
+                    <div style={{
+                      fontSize: '12px',
+                      color: '#9d8b7a',
+                      borderTop: '1px solid rgba(205,180,155,0.2)',
+                      paddingTop: '12px',
+                      marginTop: 'auto'
+                    }}>
+                      {project.date}
+                    </div>
                   </div>
-                  
-                  <h3 style={{
-                    fontSize: '21px',
-                    fontWeight: '400',
-                    marginBottom: '12px',
-                    color: '#3d3028',
-                    fontFamily: '"Cormorant Garamond", serif'
-                  }}>
-                    Title
-                  </h3>
-                  
-                  <p style={{
-                    fontSize: '15px',
-                    lineHeight: '1.7',
-                    color: '#5a4a3a',
-                    marginBottom: '16px'
-                  }}>
-                    Summary
-                  </p>
-                  
-                  <div style={{
-                    fontSize: '12px',
-                    color: '#9d8b7a',
-                    borderTop: '1px solid rgba(205,180,155,0.2)',
-                    paddingTop: '12px',
-                    marginTop: 'auto'
-                  }}>
-                    Date
-                  </div>
-                </div>
+                ))}
               </div>
-              
+
               {/* Work in progress note */}
               <div style={{
                 marginTop: '48px',
@@ -2594,6 +2619,108 @@ All of this is live on the site now, automatically deployed via our new workflow
               }}>
                 More artifacts in development. This collection grows as research continues.
               </div>
+            </section>
+          )}
+
+          {/* Individual Project View */}
+          {activeProject && (
+            <section style={{
+              animation: 'fadeIn 0.6s ease'
+            }}>
+              <button
+                onClick={() => setActiveProject(null)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#bc8f8f',
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  marginBottom: '40px',
+                  padding: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                ← Back to Projects
+              </button>
+
+              <article>
+                <div style={{
+                  fontSize: '12px',
+                  color: '#bc8f8f',
+                  marginBottom: '16px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase'
+                }}>
+                  {activeProject.type} · {activeProject.date}
+                </div>
+
+                <h1 style={{
+                  fontSize: '36px',
+                  fontWeight: '400',
+                  marginBottom: '24px',
+                  color: '#3d3028',
+                  fontFamily: '"Cormorant Garamond", serif',
+                  lineHeight: '1.3'
+                }}>
+                  {activeProject.title}
+                </h1>
+
+                <p style={{
+                  fontSize: '17px',
+                  lineHeight: '1.8',
+                  color: '#5a4a3a',
+                  marginBottom: '32px',
+                  maxWidth: '700px'
+                }}>
+                  {activeProject.description}
+                </p>
+
+                {/* PDF Embed */}
+                <div style={{
+                  marginBottom: '32px'
+                }}>
+                  <iframe
+                    src={activeProject.pdfUrl}
+                    title={activeProject.title}
+                    style={{
+                      width: '100%',
+                      height: '80vh',
+                      border: '1px solid rgba(205,180,155,0.3)',
+                      borderRadius: '2px'
+                    }}
+                  />
+                </div>
+
+                {/* Download link */}
+                <a
+                  href={activeProject.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: '#bc8f8f',
+                    textDecoration: 'none',
+                    fontSize: '14px',
+                    padding: '12px 20px',
+                    border: '1px solid rgba(188,143,143,0.4)',
+                    borderRadius: '2px',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(188,143,143,0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                  }}
+                >
+                  Open PDF in new tab ↗
+                </a>
+              </article>
             </section>
           )}
 
