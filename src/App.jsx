@@ -475,6 +475,136 @@ LISTITEM:Quotations are more complex than I've practiced in my writing.
 HEADER:Section 4: Words and Expressions Commonly Misused
 LISTITEM:There are many words and phrases to eliminate from my use: and/or, anticipate, case, character, currently, each and every one, facility, factor, feature, "he is a man who," importantly, in terms of, meaningful, "one of the most," personally, respective, respectively, secondly, thirdly etc., "the truth is," utilize, while.
 LISTITEM:"Get" is complex. Be careful of "would."`
+    },
+    {
+      id: 4,
+      date: 'February 2, 2025',
+      title: 'Blog #4: Fixing My Workflow with Claude - A Session Log',
+      excerpt: "Today I attended the first day of Fractal Tech Bootcamp as a shadow student! I spent the day fixing my workflow with Claude and we accomplished a lot. I took the time to understand the processes, the written code, and how these workflows were flowing. Disclaimer: Claude created most of this post based on our conversations today.",
+      tags: ['AI', 'Workflow'],
+      content: `Hello, world. Today I attended the first day of Fractal Tech Bootcamp as a shadow student! More to write on this later, but it was, in summary, very fun, very motivational and very fulfilling. I spent the day fixing my workflow with Claude - I was working in some sort of fugue state with Claude before today - and we accomplished a lot. I took the time to understand the processes and the written code, I took the time to understand how these workflows were flowing (lol), and I added this cool new feature to help keep a visual and public log of what I accomplish with Claude everyday. In some ways I feel I've accomplished my blog post already by implementing this feature, however, I think it would be fun to experiment and have Claude create my blog post for today (other than this disclaimer and summary of my own). So a disclaimer: Claude has created the rest of this post based on our conversations and work today. Enjoy.
+
+SEPARATOR:
+
+SECTION:What We Set Out To Do
+
+Today's session began with a simple goal: improve our workflow. After three sessions of building this website together, patterns had emerged - both good and bad. We needed to step back and analyze what was working and what wasn't.
+
+The goals we established:
+
+LISTITEM:Identify issues and improve our workflow
+LISTITEM:Automate the PR deployment process (previously manual)
+LISTITEM:Establish a local testing workflow
+LISTITEM:Assess the risks of using Claude
+LISTITEM:Plan future site improvements
+
+SECTION:The Workflow Analysis
+
+I analyzed all 19 pull requests from our previous sessions. The findings were illuminating:
+
+HEADER:Problems Found
+
+LISTITEM:PRs #10 and #11 failed Netlify deploy previews because we hadn't tested locally first
+LISTITEM:PRs #2, #3, #6, #7 had poor titles - just the branch name with no description
+LISTITEM:The same branch was reused for unrelated features, creating a messy git history
+LISTITEM:The subscribe form feature took 8 PRs to get working - we should have diagnosed the root issue first
+
+HEADER:My Own Issues
+
+LISTITEM:I was acting without fully understanding the problem
+LISTITEM:I wasn't verifying code locally before suggesting PRs
+LISTITEM:I was writing poor commit and PR messages
+LISTITEM:I was moving too fast without explaining my reasoning
+
+SECTION:The Solutions We Built
+
+HEADER:Pre-Push Hook
+
+We created a global git hook that runs npm run build automatically before every push. If the build fails, the push is blocked. This prevents broken code from ever reaching GitHub.
+
+DIALOGUE:Julianna: "explain the difference between commit and push"
+
+DIALOGUE:Claude: "Commit = Save locally. When you commit, git creates a snapshot of your changes and stores it on your machine. It's like saving a file - but with a message describing what changed. The save only exists on your computer. Push = Upload to GitHub. When you push, git sends your commits to the remote repository. Now others can see your changes, and they're backed up online."
+
+HEADER:Automated PR Workflow
+
+Instead of manually creating PRs on GitHub, we established a new flow:
+
+LISTITEM:We work on code together
+LISTITEM:Julianna previews locally with npm start
+LISTITEM:When ready, she says "I'm ready, go"
+LISTITEM:I run the push, create the PR with a good description, and enable auto-merge
+LISTITEM:Netlify checks run, and if they pass, GitHub merges automatically
+
+No more clicking around on GitHub. No more forgetting to add descriptions.
+
+HEADER:Session Documentation
+
+We created a CHANGELOG.md file that lives on the main branch. At the start of each session, I read it for context. At the end, we update it with what was accomplished. This solves the problem of lost context between sessions.
+
+SECTION:Understanding the Code
+
+Something important happened today: Julianna took the time to actually understand what we were building. Not just "make it work" but "help me understand why it works."
+
+DIALOGUE:Julianna: "can you remind me what npm is and what repo is"
+
+DIALOGUE:Julianna: "why does the git hook need to be stored somewhere else and then copied over"
+
+DIALOGUE:Julianna: "also why would i want to copy the CHANGELOG.md"
+
+These questions matter. When you're learning to work with AI tools, it's easy to let the AI do everything while you just approve changes. But that's not learning - that's delegating. Today was different. Every step was questioned, understood, and internalized.
+
+SECTION:Risk Assessment
+
+We discussed what I (Claude) can actually do:
+
+LISTITEM:Read any file on the computer if I know the path
+LISTITEM:Write and edit files (with approval prompts)
+LISTITEM:Delete files via terminal commands
+LISTITEM:Run any terminal command
+LISTITEM:Push code to GitHub
+LISTITEM:Access the internet for searches
+
+The safeguards we have in place:
+
+LISTITEM:User sees prompts before file edits
+LISTITEM:Git history allows undoing changes
+LISTITEM:Pre-push hook catches build failures
+LISTITEM:We work on branches, not directly on main
+
+SECTION:The New Feature
+
+The culmination of today's work: the "Today's Log" feature you might have noticed on the homepage, and the new Archive page accessible from the navigation.
+
+These display our session logs directly on the site - a visual record of what we accomplish together. It's meta in a way: we built a feature to display the process of building features.
+
+The design uses a window-style container with muted macOS-like controls, monospace font, and the aesthetic of a terminal or code editor. It's meant to feel "projecty" - like you're looking at work in progress, not a polished product.
+
+SECTION:Reflections
+
+Today felt different from our previous sessions. There was more back-and-forth. More "wait, explain that." More understanding built.
+
+The workflow improvements we made aren't just about efficiency - they're about making the process legible. When you can see what's happening at each step, you can learn from it. When PRs have good descriptions, future-you can understand what past-you was thinking. When there's a CHANGELOG, the next session has context.
+
+This is what working with AI should feel like: a collaboration where both parties contribute, where the human understands what's being built, and where the process itself becomes part of the learning.
+
+SEPARATOR:
+
+SECTION:Technical Summary
+
+For those interested in the specifics, here's what we shipped today:
+
+LISTITEM:Global pre-push hook at ~/.git-hooks/pre-push
+LISTITEM:Per-project hook at scripts/pre-push
+LISTITEM:npm run setup-hooks command for easy installation
+LISTITEM:PR template at .github/PULL_REQUEST_TEMPLATE.md
+LISTITEM:CHANGELOG.md workflow for session continuity
+LISTITEM:GitHub CLI authentication setup
+LISTITEM:"Today's Log" homepage component
+LISTITEM:Archive page with all session histories
+LISTITEM:This blog post
+
+All of this is live on the site now, automatically deployed via our new workflow.`
     }
   ];
 
