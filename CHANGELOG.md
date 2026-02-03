@@ -5,8 +5,8 @@ A running log of development sessions for Julianna Roberts' personal website.
 ---
 
 ## Session 4: February 2, 2025
-**Branch:** `claude/review-improve-workflow-5qnhW`
-**Focus:** Workflow improvements and documentation
+**Branches:** `claude/review-improve-workflow-5qnhW`, `claude/blog-post-4`, `claude/add-portfolio-project`
+**Focus:** Workflow improvements, documentation, and new features
 
 ### Goals
 **Workflow & Automation**
@@ -25,7 +25,10 @@ A running log of development sessions for Julianna Roberts' personal website.
 
 **Features**
 - [ ] Create a domain
-- [x] Add daily log feature to website (draw from changelog notes) - in progress
+- [x] Add daily log feature to website (draw from changelog notes)
+- [x] Add Archive page with all session logs
+- [x] Add Blog #4 documenting this session
+- [x] Add portfolio as a project with dedicated project page
 
 ### Changes
 - Added: `CHANGELOG.md` workflow (lives on main, updated each session)
@@ -36,7 +39,15 @@ A running log of development sessions for Julianna Roberts' personal website.
 - Added: First-time setup section in README.md
 - Added: GitHub CLI authentication (`gh auth login`, `gh auth setup-git`)
 - Added: "Today's Log" section on homepage with window-style container
+- Added: "Archive" navigation section with all session logs in window containers
+- Added: Blog #4 "Fixing My Workflow with Claude - A Session Log"
+- Added: Portfolio project with dedicated project page (like blog posts)
+- Added: `activeProject` state and `projects` data array for extensibility
+- Added: Embedded PDF viewer on project detail page
 - Merged: PR #20 - workflow automation changes
+- Merged: PR #21 - Today's Log and Archive feature
+- Merged: PR #22 - Blog #4
+- Merged: PR #23 - Portfolio project with project page
 
 ### Workflow Analysis
 Analyzed all 19 PRs from Sessions 1-3. Found issues:
@@ -75,16 +86,17 @@ Analyzed all 19 PRs from Sessions 1-3. Found issues:
 - eslintConfig
 - PR templates
 - Auto-merge
+- React state management (useState)
+- Project page pattern (like blog posts)
 
 ### Site Vision
-User wants the site to be an active visual of daily work, thoughts, and projections. Adding "Today's Log" feature that displays session notes in a window-style container on the homepage.
+User wants the site to be an active visual of daily work, thoughts, and projections. Added "Today's Log" on homepage and "Archive" section showing all session logs in window-style containers matching the site aesthetic.
 
 ### Next Session
-- Finish "Today's Log" and "Archive" sections on homepage
-- Add portfolio to projects page
 - Add resume PDF
 - Change site name
 - Create domain
+- Consider converting portfolio PDF to images for cleaner display
 
 ---
 
