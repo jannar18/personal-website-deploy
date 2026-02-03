@@ -721,11 +721,73 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                   <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Session 4:</span> February 2, 2025</p>
                   <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/review-improve-workflow-5qnhW</p>
                   <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Workflow improvements and documentation</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}><span style={{ color: '#8b7355' }}>Workflow & Automation</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify issues and improve workflow with Claude</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Automate more workflow (e.g., PR deployment - currently manual)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Establish local testing/building workflow</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Risk Assessment</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify risks with using Claude</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify how to manage Claude risks</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Site Planning & Design</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify and refine site goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Change site design based on new goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Change the site name</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Features</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Create a domain</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Add daily log feature to website - in progress</p>
+
                   <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Added pre-push hook for build checks</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Automated PR workflow with auto-merge</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Established CHANGELOG workflow for session continuity</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Analyzed risks of using Claude<span style={{
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: CHANGELOG.md workflow (lives on main, updated each session)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: PR template at .github/PULL_REQUEST_TEMPLATE.md</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Global pre-push hook at ~/.git-hooks/pre-push</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Per-project pre-push hook at scripts/pre-push</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: npm run setup-hooks command in package.json</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: First-time setup section in README.md</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: GitHub CLI authentication (gh auth login, gh auth setup-git)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: "Today's Log" section on homepage with window-style container</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Archive page for session logs</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Merged: PR #20 - workflow automation changes</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Workflow Analysis</p>
+                  <p style={{ margin: '0 0 4px 0' }}>Analyzed all 19 PRs from Sessions 1-3. Found issues:</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- PRs #10, #11 failed deploy previews (no local testing before push)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- PRs #2, #3, #6, #7 had poor titles (just branch names, no descriptions)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Same branch reused for unrelated features</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- 8 PRs needed for subscribe form fix (should have diagnosed first)</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### New Workflow Established</p>
+                  <p style={{ margin: '0 0 4px 0' }}>1. Work on code together</p>
+                  <p style={{ margin: '0 0 4px 0' }}>2. Preview locally (npm start)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>3. User says "I'm ready, go"</p>
+                  <p style={{ margin: '0 0 4px 0' }}>4. Claude runs: git push → gh pr create → gh pr merge --auto --squash</p>
+                  <p style={{ margin: '0 0 4px 0' }}>5. Netlify checks run → auto-merge if passing → deploy</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Risk Assessment</p>
+                  <p style={{ margin: '0 0 4px 0' }}><span style={{ color: '#8b7355' }}>What Claude can access:</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Read/write/delete files (with prompts)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Run terminal commands</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Push to GitHub</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Files outside git not protected by version history</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Current safeguards:</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- User sees prompts before file edits</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Git history allows undo</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Pre-push hook catches build failures</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Work on branches, not directly on main</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Concepts Explained This Session</p>
+                  <p style={{ margin: '0 0 4px 0' }}>npm, repo, commit vs push, git hooks, git checkout, package.json scripts, eslintConfig, PR templates, Auto-merge</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Site Vision</p>
+                  <p style={{ margin: '0 0 4px 0' }}>User wants the site to be an active visual of daily work, thoughts, and projections. Adding "Today's Log" feature that displays session notes in a window-style container on the homepage.</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Next Session</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Finish "Today's Log" and "Archive" sections</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Add portfolio to projects page</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Add resume PDF</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Change site name</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Create domain<span style={{
                     display: 'inline-block',
                     width: '7px',
                     height: '14px',
@@ -2449,12 +2511,232 @@ LISTITEM:"Get" is complex. Be careful of "would."`
                 }}>
                   <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/review-improve-workflow-5qnhW</p>
                   <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Workflow improvements and documentation</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}><span style={{ color: '#8b7355' }}>Workflow & Automation</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify issues and improve workflow with Claude</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Automate more workflow (e.g., PR deployment - currently manual)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Establish local testing/building workflow</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Risk Assessment</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify risks with using Claude</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify how to manage Claude risks</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Site Planning & Design</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Identify and refine site goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Change site design based on new goals</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Change the site name</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Features</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [ ] Create a domain</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- [x] Add daily log feature to website - in progress</p>
+
                   <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Added pre-push hook for build checks</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Automated PR workflow with auto-merge</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Established CHANGELOG workflow for session continuity</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Analyzed risks of using Claude</p>
-                  <p style={{ margin: '0 0 4px 0' }}>- Started "Today's Log" homepage feature</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: CHANGELOG.md workflow (lives on main, updated each session)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: PR template at .github/PULL_REQUEST_TEMPLATE.md</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Global pre-push hook at ~/.git-hooks/pre-push</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Per-project pre-push hook at scripts/pre-push</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: npm run setup-hooks command in package.json</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: First-time setup section in README.md</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: GitHub CLI authentication (gh auth login, gh auth setup-git)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: "Today's Log" section on homepage with window-style container</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Archive page for session logs</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Merged: PR #20 - workflow automation changes</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Workflow Analysis</p>
+                  <p style={{ margin: '0 0 4px 0' }}>Analyzed all 19 PRs from Sessions 1-3. Found issues:</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- PRs #10, #11 failed deploy previews (no local testing before push)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- PRs #2, #3, #6, #7 had poor titles (just branch names, no descriptions)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Same branch reused for unrelated features</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- 8 PRs needed for subscribe form fix (should have diagnosed first)</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### New Workflow Established</p>
+                  <p style={{ margin: '0 0 4px 0' }}>1. Work on code together</p>
+                  <p style={{ margin: '0 0 4px 0' }}>2. Preview locally (npm start)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>3. User says "I'm ready, go"</p>
+                  <p style={{ margin: '0 0 4px 0' }}>4. Claude runs: git push → gh pr create → gh pr merge --auto --squash</p>
+                  <p style={{ margin: '0 0 4px 0' }}>5. Netlify checks run → auto-merge if passing → deploy</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Risk Assessment</p>
+                  <p style={{ margin: '0 0 4px 0' }}><span style={{ color: '#8b7355' }}>What Claude can access:</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Read/write/delete files (with prompts)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Run terminal commands</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Push to GitHub</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Files outside git not protected by version history</p>
+                  <p style={{ margin: '8px 0 4px 0' }}><span style={{ color: '#8b7355' }}>Current safeguards:</span></p>
+                  <p style={{ margin: '0 0 4px 0' }}>- User sees prompts before file edits</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Git history allows undo</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Pre-push hook catches build failures</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Work on branches, not directly on main</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Concepts Explained This Session</p>
+                  <p style={{ margin: '0 0 4px 0' }}>npm, repo, commit vs push, git hooks, git checkout, package.json scripts, eslintConfig, PR templates, Auto-merge</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Site Vision</p>
+                  <p style={{ margin: '0 0 4px 0' }}>User wants the site to be an active visual of daily work, thoughts, and projections. Adding "Today's Log" feature that displays session notes in a window-style container on the homepage.</p>
+
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Next Session</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Finish "Today's Log" and "Archive" sections</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Add portfolio to projects page</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Add resume PDF</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Change site name</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Create domain</p>
+                </div>
+              </div>
+
+              {/* Session 3 */}
+              <div style={{
+                marginBottom: '24px',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                border: '1px solid rgba(139,115,85,0.25)',
+                boxShadow: '0 2px 8px rgba(61,48,40,0.06)'
+              }}>
+                <div style={{
+                  background: 'rgba(139,115,85,0.12)',
+                  padding: '10px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderBottom: '1px solid rgba(139,115,85,0.15)'
+                }}>
+                  <div style={{ display: 'flex', gap: '5px' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(188,143,143,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(205,180,155,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(139,115,85,0.4)' }}></div>
+                  </div>
+                  <span style={{
+                    color: '#8b7355',
+                    fontSize: '12px',
+                    fontFamily: '"SF Mono", "Fira Code", monospace',
+                    marginLeft: '10px'
+                  }}>
+                    Session 3 — January 31, 2025
+                  </span>
+                </div>
+                <div style={{
+                  padding: '24px 28px',
+                  background: 'rgba(255,255,255,0.4)',
+                  fontFamily: '"SF Mono", "Fira Code", monospace',
+                  color: '#3d3028',
+                  fontSize: '13px',
+                  lineHeight: '1.9'
+                }}>
+                  <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/create-blog-post-3-GJSXi</p>
+                  <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Blog Post #3 - The Elements of Style</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Blog Post #3 "I Failed My Assignment - The Elements of Style"</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Fixed: "My Notes" dropdown crash (changed to plain text)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Fixed: List items styling (lighter visual weight)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Fixed: Grammar in Claude notes explanation</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Intro text before dialogue section</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Issues</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Collapsible dropdown caused crash when content wasn't properly formatted</p>
+                </div>
+              </div>
+
+              {/* Session 2 */}
+              <div style={{
+                marginBottom: '24px',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                border: '1px solid rgba(139,115,85,0.25)',
+                boxShadow: '0 2px 8px rgba(61,48,40,0.06)'
+              }}>
+                <div style={{
+                  background: 'rgba(139,115,85,0.12)',
+                  padding: '10px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderBottom: '1px solid rgba(139,115,85,0.15)'
+                }}>
+                  <div style={{ display: 'flex', gap: '5px' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(188,143,143,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(205,180,155,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(139,115,85,0.4)' }}></div>
+                  </div>
+                  <span style={{
+                    color: '#8b7355',
+                    fontSize: '12px',
+                    fontFamily: '"SF Mono", "Fira Code", monospace',
+                    marginLeft: '10px'
+                  }}>
+                    Session 2 — January 30, 2025
+                  </span>
+                </div>
+                <div style={{
+                  padding: '24px 28px',
+                  background: 'rgba(255,255,255,0.4)',
+                  fontFamily: '"SF Mono", "Fira Code", monospace',
+                  color: '#3d3028',
+                  fontSize: '13px',
+                  lineHeight: '1.9'
+                }}>
+                  <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> claude/blog-review-update-SKKf5</p>
+                  <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Blog Post #2 + Subscribe functionality</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Blog Post #2 "I've Been Convinced of Crusonia Plants"</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Email subscribe forms (footer + writing page)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Feedback form at end of blog posts</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Collapsible note headers (dropdowns)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Netlify serverless function for welcome emails</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Fixed: Subscribe form 404 errors (PRs #6-9, #12)</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Issues</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Multiple PRs needed - should have tested locally first</p>
+                </div>
+              </div>
+
+              {/* Session 1 */}
+              <div style={{
+                marginBottom: '24px',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                border: '1px solid rgba(139,115,85,0.25)',
+                boxShadow: '0 2px 8px rgba(61,48,40,0.06)'
+              }}>
+                <div style={{
+                  background: 'rgba(139,115,85,0.12)',
+                  padding: '10px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderBottom: '1px solid rgba(139,115,85,0.15)'
+                }}>
+                  <div style={{ display: 'flex', gap: '5px' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(188,143,143,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(205,180,155,0.5)' }}></div>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(139,115,85,0.4)' }}></div>
+                  </div>
+                  <span style={{
+                    color: '#8b7355',
+                    fontSize: '12px',
+                    fontFamily: '"SF Mono", "Fira Code", monospace',
+                    marginLeft: '10px'
+                  }}>
+                    Session 1 — January 28, 2025
+                  </span>
+                </div>
+                <div style={{
+                  padding: '24px 28px',
+                  background: 'rgba(255,255,255,0.4)',
+                  fontFamily: '"SF Mono", "Fira Code", monospace',
+                  color: '#3d3028',
+                  fontSize: '13px',
+                  lineHeight: '1.9'
+                }}>
+                  <p style={{ margin: '0 0 6px 0' }}><span style={{ color: '#8b7355' }}>Branch:</span> main (initial setup)</p>
+                  <p style={{ margin: '0 0 14px 0' }}><span style={{ color: '#8b7355' }}>Focus:</span> Initial website creation</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Changes</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Created: Full React website with App.jsx</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Created: Project structure (package.json, public/, src/)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Deployed: Site to Netlify</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Added: Blog Post #1 documenting the creation process</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Issues</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Claude Code installation confusion (macOS updates required)</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- "Ghostty" vs "Ghostie" terminal naming confusion</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Model mismatch: Claude Desktop was on Sonnet instead of Opus</p>
+                  <p style={{ margin: '14px 0 10px 0', color: '#8b7355' }}>### Lessons Learned</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Always verify exact commands before suggesting</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Ask clarifying questions instead of assuming</p>
+                  <p style={{ margin: '0 0 4px 0' }}>- Test locally before deploying</p>
                 </div>
               </div>
 
