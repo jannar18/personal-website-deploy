@@ -551,5 +551,38 @@ LISTITEM:Archive page with all session histories
 LISTITEM:This blog post
 
 All of this is live on the site now, automatically deployed via our new workflow.`
+  },
+  {
+    id: 5,
+    slug: 'my-first-demo',
+    date: 'February 7, 2025',
+    title: 'Blog #5 - My First Demo - Why Claude is the Reason I am Here',
+    excerpt: 'The story of how I got here — from architecture school to an AI accelerator — told through the photos along the way.',
+    tags: ['Personal', 'AI'],
+    content: `The story of how I got here — from architecture school to an AI accelerator — told through the photos along the way.
+
+SEPARATOR:
+
+PHOTO:/IMG_3704.JPG|Feeling the material. Architecture is about touching the world.
+
+PHOTO:/IMG_3701.JPG|City Plan of Tokyo, spread out on the drafting table. Studio hours.
+
+PHOTO:/IMG_3705.JPG|The CAD monkey grind. We've all been here.
+
+PHOTO:/IMG_3706.JPG|Home. Florida.
+
+PHOTO:/IMG_3700.JPG|The text that changed everything. "hello priya... we have a scheme."
+
+PHOTO:/IMG_3703.JPG|First conversation with Claude. "I'd like to build a polished personal website."
+
+PHOTO:/IMG_3699.JPG|Learning the tools. Claude Code vs Desktop — figuring it all out.
+
+PHOTO:/IMG_3702.JPG|The vibe.
+
+PHOTO:/IMG_3707.JPG|The reality.
+
+SEPARATOR:
+
+CLOSING:And that's how I ended up here.`
   }
 ];

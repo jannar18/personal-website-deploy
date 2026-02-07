@@ -340,6 +340,52 @@ export default function BlogContentRenderer({ content }) {
       continue;
     }
 
+    // Handle PHOTO
+    if (line.startsWith('PHOTO:')) {
+      const photoData = line.replace('PHOTO:', '');
+      const [src, caption] = photoData.includes('|') ? photoData.split('|') : [photoData, ''];
+      elements.push(
+        <figure key={`photo-${i}`} style={{
+          margin: '40px 0',
+          padding: 0,
+          width: '100%'
+        }}>
+          <div style={{
+            width: '100%',
+            borderRadius: '4px',
+            overflow: 'hidden',
+            border: '1px solid rgba(205,180,155,0.3)',
+            background: 'rgba(205,180,155,0.08)'
+          }}>
+            <img
+              src={src.trim()}
+              alt={caption ? caption.trim() : 'Blog photo'}
+              onError={(e) => { e.target.parentElement.style.display = 'none'; }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block'
+              }}
+            />
+          </div>
+          {caption && caption.trim() && (
+            <figcaption style={{
+              marginTop: '12px',
+              fontSize: '14px',
+              color: '#8b7355',
+              fontStyle: 'italic',
+              textAlign: 'center',
+              lineHeight: '1.5'
+            }}>
+              {caption.trim()}
+            </figcaption>
+          )}
+        </figure>
+      );
+      i++;
+      continue;
+    }
+
     // Handle SEPARATOR
     if (line.startsWith('SEPARATOR:')) {
       elements.push(
