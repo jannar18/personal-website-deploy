@@ -1,7 +1,9 @@
 import PrintButton from './PrintButton';
+import PasswordGate from './PasswordGate';
 
 export default function AboutPage() {
   return (
+    <PasswordGate>
     <section style={{ animation: 'fadeIn 0.6s ease' }}>
       <div className="about-grid" style={{
         display: 'grid',
@@ -340,5 +342,6 @@ export default function AboutPage() {
         </div>
       </div>
     </section>
+    </PasswordGate>
   );
 }
