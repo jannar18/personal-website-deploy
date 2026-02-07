@@ -563,23 +563,23 @@ All of this is live on the site now, automatically deployed via our new workflow
 
 SEPARATOR:
 
-PHOTO:/blog/01-brick-wall.jpg|Feeling the material. Architecture is about touching the world.
+PHOTO:/IMG_3704.JPG|Feeling the material. Architecture is about touching the world.
 
-PHOTO:/blog/02-tokyo-plan.jpg|City Plan of Tokyo, spread out on the drafting table. Studio hours.
+PHOTO:/IMG_3701.JPG|City Plan of Tokyo, spread out on the drafting table. Studio hours.
 
-PHOTO:/blog/03-cad-monkey.jpg|The CAD monkey grind. We've all been here.
+PHOTO:/IMG_3705.JPG|The CAD monkey grind. We've all been here.
 
-PHOTO:/blog/04-florida-lake.jpg|Home. Florida.
+PHOTO:/IMG_3706.JPG|Home. Florida.
 
-PHOTO:/blog/05-whatsapp-nyc.jpg|The text that changed everything. "hello priya... we have a scheme."
+PHOTO:/IMG_3700.JPG|The text that changed everything. "hello priya... we have a scheme."
 
-PHOTO:/blog/06-claude-website.jpg|First conversation with Claude. "I'd like to build a polished personal website."
+PHOTO:/IMG_3703.JPG|First conversation with Claude. "I'd like to build a polished personal website."
 
-PHOTO:/blog/07-claude-code.jpg|Learning the tools. Claude Code vs Desktop — figuring it all out.
+PHOTO:/IMG_3699.JPG|Learning the tools. Claude Code vs Desktop — figuring it all out.
 
-PHOTO:/blog/08-learn-to-code.jpg|The vibe.
+PHOTO:/IMG_3702.JPG|The vibe.
 
-PHOTO:/blog/09-no-idea-pug.jpg|The reality.
+PHOTO:/IMG_3707.JPG|The reality.
 
 SEPARATOR:
 
