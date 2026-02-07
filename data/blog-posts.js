@@ -556,7 +556,7 @@ All of this is live on the site now, automatically deployed via our new workflow
     id: 5,
     slug: 'my-first-demo',
     date: 'February 7, 2025',
-    title: 'Blog #5: My First Demo',
+    title: 'Blog #5 - My First Demo - Why Claude is the Reason I am Here',
     excerpt: 'The story of how I got here — from architecture school to an AI accelerator — told through the photos along the way.',
     tags: ['Personal', 'AI'],
     content: `The story of how I got here — from architecture school to an AI accelerator — told through the photos along the way.
