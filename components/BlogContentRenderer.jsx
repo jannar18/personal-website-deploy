@@ -360,6 +360,7 @@ export default function BlogContentRenderer({ content }) {
             <img
               src={src.trim()}
               alt={caption ? caption.trim() : 'Blog photo'}
+              onError={(e) => { e.target.parentElement.style.display = 'none'; }}
               style={{
                 width: '100%',
                 height: 'auto',
