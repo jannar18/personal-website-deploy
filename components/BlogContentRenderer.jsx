@@ -363,7 +363,8 @@ export default function BlogContentRenderer({ content }) {
               onError={(e) => { e.target.parentElement.style.display = 'none'; }}
               style={{
                 width: '100%',
-                height: 'auto',
+                maxHeight: '70vh',
+                objectFit: 'contain',
                 display: 'block'
               }}
             />
